@@ -19,6 +19,14 @@ public class Section implements Serializable {
 	int position; 
 	Kanban kanban;
 	
+	public Section(String libelle, int position) {
+		this.position=position;
+		this.libelle=libelle;
+	}
+	
+	public Section() {
+		
+	}
 	@Id
 	@GeneratedValue
 	public long getId() {
@@ -41,7 +49,7 @@ public class Section implements Serializable {
 	public void setPosition(int position) {
 		this.position = position;
 	}
-	 @ManyToOne
+	 @OneToMany
 	public Kanban getKanban() {
 		return kanban;
 	}

@@ -56,7 +56,7 @@ public class Kanban implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Kanban [id=" + id + ", nom=" + nom +  ", admin=" + admin + "]";
+		return "Kanban [id=" + id + ", nom=" + nom +  ", admin=" + admin.getEmail() + "]";
 	}
 	  	 
 
