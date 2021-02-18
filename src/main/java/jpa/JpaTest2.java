@@ -6,15 +6,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 
-import dao.FicheDao;
-import dao.KanbanDao;
-import dao.SectionDao;
-import dao.TagDao;
-import dao.UserDao;
-import entity.Kanban;
-import entity.Section;
-import entity.Tag;
-import entity.User;
+import fr.istic.kanban.dao.FicheDao;
+import fr.istic.kanban.dao.KanbanDao;
+import fr.istic.kanban.dao.SectionDao;
+import fr.istic.kanban.dao.TagDao;
+import fr.istic.kanban.dao.UserDao;
+import fr.istic.kanban.entity.Kanban;
+import fr.istic.kanban.entity.Section;
+import fr.istic.kanban.entity.Tag;
+import fr.istic.kanban.entity.User;
 
 public class JpaTest2 {
 
