@@ -3,17 +3,27 @@ package fr.istic.kanban.dto;
 import fr.istic.kanban.entity.Kanban;
 
 public class SectionDto {
+	Long id;
 	String libelle;
 	int position; 
 	Kanban kanban;
 	
-	public SectionDto(String libelle, int position, Kanban kanban) { 
+	public SectionDto(Long id, String libelle, int position, Kanban kanban) { 
+		this.id=id;
 		this.position=position;
 		this.libelle=libelle;
 		this.kanban=kanban;
 	}
 	
 	public SectionDto() { 
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getLibelle() {
@@ -38,6 +48,11 @@ public class SectionDto {
 
 	public void setKanban(Kanban kanban) {
 		this.kanban = kanban;
+	}
+
+	@Override
+	public String toString() {
+		return "SectionDto [libelle=" + libelle + ", position=" + position + ", kanban=" + kanban + "]";
 	}
 		
 }

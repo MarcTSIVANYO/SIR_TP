@@ -1,33 +1,37 @@
 package fr.istic.kanban.dto;
-
-import java.util.List;
  
-import fr.istic.kanban.entity.Fiche;
-
 public class TagDto {
-	String name;
-	List<Fiche> fiches;
+	Long id;
+	String name; 
 	
-	public TagDto( String name, List<Fiche> fiches) {
+	public TagDto(Long id, String name) {
 		super(); 
-		this.name = name;
-		this.fiches = fiches;
+		this.id=id;
+		this.name = name; 
 	}
 	
 	public TagDto() { 
 	}
- 
+	  
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
-	  
-	public List<Fiche> getFiche() {
-		return fiches;
+
+	@Override
+	public String toString() {
+		return "TagDto [id=" + id + ", name=" + name + "]";
 	}
-	public void setFiche(List<Fiche> fiches) {
-		this.fiches = fiches;
-	}
+	   
 }

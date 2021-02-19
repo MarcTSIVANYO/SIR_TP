@@ -51,15 +51,6 @@ public class KanbanService {
 	}
 
 	/*
-	 * Supprimer une entité
-	 * NotFundException if id is'nt valid or not found 
-	 */
-	public void deleteById(Long id) {
-		CustomException.isValid(id);  
-		kanbanDao.deleteById(id);
-	}
-	
-	/*
 	 * Recupérer une valeur à partir d'un id
 	 * NotFundException if id is'nt valid or not found 
 	 */
@@ -80,4 +71,14 @@ public class KanbanService {
         } 
 		return kanbanDto; 
 	}
+	
+	/*
+	 * Supprimer une entité
+	 * NotFundException if id is'nt valid or not found 
+	 */
+	public void deleteById(Long id) {
+		CustomException.isValid(id);  
+		kanbanDao.deleteById(id);
+	}
+	
 }

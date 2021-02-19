@@ -23,7 +23,11 @@ public class Tag  implements Serializable {
 		this.name = name;
 		this.fiches = fiches;
 	}
-	
+
+	public Tag( String name) {
+		super(); 
+		this.name = name; 
+	}
 	public Tag() { 
 	}
 

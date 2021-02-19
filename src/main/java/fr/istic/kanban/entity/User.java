@@ -11,6 +11,16 @@ public class User  implements Serializable  {
 	String email;
 	String name;
 	
+	
+	public User(String email, String name) {
+		super();
+		this.email = email;
+		this.name = name;
+	}
+	
+	public User() { 
+	}
+
 	@Id
 	public String getEmail() {
 		return email;

@@ -28,4 +28,10 @@ public class UserDto {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "UserDto [email=" + email + ", name=" + name + "]";
+	}
+	
 }

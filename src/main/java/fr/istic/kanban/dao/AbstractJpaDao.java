@@ -62,8 +62,7 @@ public abstract class AbstractJpaDao<K, T extends Serializable> implements IGene
 	}
 
 	public void deleteById(K entityId) {
-		T entity = findOne(entityId);
-		System.out.println(entity.toString());
+		T entity = findOne(entityId); 
 		delete(entity);
 	}
 }

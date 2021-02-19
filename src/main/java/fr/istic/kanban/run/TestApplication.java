@@ -21,7 +21,10 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
-import fr.istic.kanban.res.KanbanResource; 
+import fr.istic.kanban.res.KanbanResource;
+import fr.istic.kanban.res.TagResource;
+import fr.istic.kanban.res.UserResource; 
+import fr.istic.kanban.res.SectionResource; 
 public class TestApplication extends Application {
 
 
@@ -29,8 +32,11 @@ public class TestApplication extends Application {
     public Set<Class<?>> getClasses() {
 
         final Set<Class<?>> clazzes = new HashSet<Class<?>>();
-  
+
         clazzes.add(KanbanResource.class);
+        clazzes.add(TagResource.class);
+        clazzes.add(UserResource.class);
+        clazzes.add(SectionResource.class);
         return clazzes;
     }
 

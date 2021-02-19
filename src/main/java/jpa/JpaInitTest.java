@@ -16,7 +16,7 @@ public class JpaInitTest {
 	public static void main(String[] args) {
 
 		EntityManagerFactory factory =   
-	 			 Persistence.createEntityManagerFactory("mysql_istic");
+	 			 Persistence.createEntityManagerFactory("postgresAzure");
 		EntityManager manager = factory.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
