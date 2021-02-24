@@ -25,6 +25,7 @@ import fr.istic.kanban.res.KanbanResource;
 import fr.istic.kanban.res.TagResource;
 import fr.istic.kanban.res.UserResource; 
 import fr.istic.kanban.res.SectionResource; 
+import fr.istic.kanban.res.FicheResource; 
 public class TestApplication extends Application {
 
 
@@ -37,6 +38,7 @@ public class TestApplication extends Application {
         clazzes.add(TagResource.class);
         clazzes.add(UserResource.class);
         clazzes.add(SectionResource.class);
+        clazzes.add(FicheResource.class);
         return clazzes;
     }
 

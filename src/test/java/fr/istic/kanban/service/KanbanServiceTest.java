@@ -16,8 +16,7 @@ import org.mockito.MockitoAnnotations;
 import fr.istic.kanban.dao.KanbanDao;
 import fr.istic.kanban.dto.KanbanDto;
 import fr.istic.kanban.entity.Kanban;
-import fr.istic.kanban.entity.User;
-import fr.istic.kanban.service.KanbanService;
+import fr.istic.kanban.entity.User; 
 
 public class KanbanServiceTest {
 

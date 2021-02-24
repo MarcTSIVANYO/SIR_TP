@@ -21,6 +21,8 @@ public class UserServiceTest {
 	private UserService userService = mock(UserService.class);
 	
 	private UserDao userDao = mock(UserDao.class);
+
+	private User user = mock(User.class);
 	
 	@Before public void initMocks() { 
 		MockitoAnnotations.initMocks(this); 
@@ -101,4 +103,18 @@ public class UserServiceTest {
        userService.deleteById(userDto.getEmail()); 
        verify(userService, times(1)).deleteById(userDto.getEmail());
    }
+	 
+
+     @Test
+     public void testUpdateTraitementAction() 
+     {
+ 
+         UserDto userDto=new UserDto(user.getEmail(),user.getName());  
+         
+         
+         String emailTwo="laurentduppont@gmail.com";
+        when(userService.getById(user.getEmail())).thenReturn(userDto); 
+        final UserDto userDtoResult = userService.update(emailTwo, userDto);
+        verify(userService, times(1)).update(emailTwo, userDto); 
+     }
 }

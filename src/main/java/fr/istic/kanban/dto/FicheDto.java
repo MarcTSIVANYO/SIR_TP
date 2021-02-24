@@ -7,7 +7,8 @@ import fr.istic.kanban.entity.Section;
 import fr.istic.kanban.entity.Tag;
 import fr.istic.kanban.entity.User;
 
-public class FicheDto { 
+public class FicheDto {
+	Long id;
 	String libelle;
 	String lieu;
 	String url;
@@ -17,20 +18,27 @@ public class FicheDto {
 	User owner;  
 	Section section; 
 	List<Tag> tags;
-	public FicheDto(String libelle, String lieu, String url, Date dateButoire, String note, int dureeminite, User owner,
-			Section section, List<Tag> tags) {
+	public FicheDto(Long id, String libelle, String lieu, String url, Date dateButoire, String note,  User owner,
+			Section section) {
 		super();
+		this.id=id;
 		this.libelle = libelle;
 		this.lieu = lieu;
 		this.url = url;
 		this.dateButoire = dateButoire;
-		this.note = note;
-		this.dureeminite = dureeminite;
+		this.note = note; 
 		this.owner = owner;
 		this.section = section;
-		this.tags = tags;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public FicheDto() { 
 	}
 

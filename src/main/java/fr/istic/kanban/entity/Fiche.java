@@ -25,6 +25,22 @@ public class Fiche  implements Serializable  {
 	User owner;  
 	Section section; 
 	List<Tag> tags;
+	 
+	public Fiche(String libelle, String lieu, String url, Date dateButoire, String note, User owner,
+			Section section, List<Tag> tags) {
+		super();
+		this.libelle = libelle;
+		this.lieu = lieu;
+		this.url = url;
+		this.dateButoire = dateButoire;
+		this.note = note; 
+		this.owner = owner;
+		this.section = section;
+		this.tags = tags;
+	}
+	
+	public Fiche() { 
+	}
 	
 	@Id
 	@GeneratedValue
@@ -34,7 +50,7 @@ public class Fiche  implements Serializable  {
 	public void setId(long id) {
 		this.id = id;
 	}
-	 
+	
 	public String getLibelle() {
 		return libelle;
 	}
