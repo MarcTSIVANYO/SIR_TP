@@ -23,9 +23,12 @@ import javax.ws.rs.core.Application;
 
 import fr.istic.kanban.res.KanbanResource;
 import fr.istic.kanban.res.TagResource;
-import fr.istic.kanban.res.UserResource; 
+import fr.istic.kanban.res.UserResource;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import fr.istic.kanban.res.SectionResource; 
 import fr.istic.kanban.res.FicheResource; 
+
+@EnableSwagger2
 public class TestApplication extends Application {
 
 
