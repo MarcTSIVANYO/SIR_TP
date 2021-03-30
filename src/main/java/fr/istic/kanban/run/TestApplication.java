@@ -19,28 +19,19 @@ package fr.istic.kanban.run;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 import fr.istic.kanban.res.KanbanResource;
 import fr.istic.kanban.res.TagResource;
-import fr.istic.kanban.res.UserResource;
-import io.swagger.jaxrs.config.BeanConfig;
-import fr.istic.kanban.res.SectionResource; 
+import fr.istic.kanban.res.UserResource; 
+import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
+import fr.istic.kanban.res.SectionResource;
+import fr.istic.kanban.res.SwaggerResource;
 import fr.istic.kanban.res.FicheResource; 
- 
+@ApplicationPath("/")
 public class TestApplication extends Application {
-	
-	 public TestApplication() {
-		    BeanConfig beanConfig = new BeanConfig(); 
-	        beanConfig.setVersion("1.0.2");
-	        beanConfig.setSchemes(new String[]{"http"});
-		    beanConfig.setBasePath("/api");
-	        beanConfig.setHost("localhost:8002");
-	        beanConfig.setResourcePackage("io.swagger.resources");
-		    beanConfig.setScan(true);
-		  }
-
-    @Override
+	     @Override
     public Set<Class<?>> getClasses() {
         final Set<Class<?>> clazzes = new HashSet<Class<?>>();
         clazzes.add(KanbanResource.class);
@@ -48,8 +39,10 @@ public class TestApplication extends Application {
         clazzes.add(UserResource.class);
         clazzes.add(SectionResource.class);
         clazzes.add(FicheResource.class);
-        clazzes.add(io.swagger.jaxrs.listing.ApiListingResource.class);
-        clazzes.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
+        //clazzes.add(ApiListingResource.class);
+        //clazzes.add(SwaggerSerializers.class); // SWAGGER endpoints
+        clazzes.add(OpenApiResource.class);
+        clazzes.add(SwaggerResource.class);
         return clazzes;
     }
 
