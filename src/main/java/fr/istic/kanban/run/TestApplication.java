@@ -24,24 +24,32 @@ import javax.ws.rs.core.Application;
 import fr.istic.kanban.res.KanbanResource;
 import fr.istic.kanban.res.TagResource;
 import fr.istic.kanban.res.UserResource;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import io.swagger.jaxrs.config.BeanConfig;
 import fr.istic.kanban.res.SectionResource; 
 import fr.istic.kanban.res.FicheResource; 
-
-@EnableSwagger2
+ 
 public class TestApplication extends Application {
-
+	
+	 public TestApplication() {
+		    BeanConfig beanConfig = new BeanConfig(); 
+	        beanConfig.setVersion("1.0.2");
+	        beanConfig.setSchemes(new String[]{"http"});
+		    beanConfig.setBasePath("/api");
+	        beanConfig.setHost("localhost:8002");
+	        beanConfig.setResourcePackage("io.swagger.resources");
+		    beanConfig.setScan(true);
+		  }
 
     @Override
     public Set<Class<?>> getClasses() {
-
         final Set<Class<?>> clazzes = new HashSet<Class<?>>();
-
         clazzes.add(KanbanResource.class);
         clazzes.add(TagResource.class);
         clazzes.add(UserResource.class);
         clazzes.add(SectionResource.class);
         clazzes.add(FicheResource.class);
+        clazzes.add(io.swagger.jaxrs.listing.ApiListingResource.class);
+        clazzes.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
         return clazzes;
     }
 
