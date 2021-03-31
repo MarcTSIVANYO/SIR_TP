@@ -14,7 +14,7 @@ import javax.persistence.*;
 })
 public class Kanban implements Serializable {
  
-	long id;
+	Long id;
 	String nom;
 	User admin; 
 	List<Section> sections;
@@ -30,10 +30,10 @@ public class Kanban implements Serializable {
 
 	@Id
 	@GeneratedValue
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNom() {

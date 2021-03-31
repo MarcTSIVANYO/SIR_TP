@@ -26,16 +26,12 @@ public class KanbanService {
 	 * Recupï¿½rer la liste de l'entitï¿½
 	 */
 	public List<KanbanDto> findAll() { 
-<<<<<<< HEAD
-        List<Kanban> kanbans=kanbanDao.findAll(); 
-		List<KanbanDto> kanbansDto = new ArrayList<>(); 
-		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban)) );
-=======
+
        // List<Kanban> kanbans=kanbanDao.findAll();
         List<Kanban> kanbans=kanbanDao.getAllKanban();
 		List<KanbanDto> kanbansDto = new ArrayList<>();
 		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban.getId(),kanban.getNom(),kanban.getAdmin())) );
->>>>>>> kanban-heritage-namedQueries
+
 		return kanbansDto; 
     }	 
 
@@ -97,7 +93,7 @@ public class KanbanService {
 		try {
 			Kanban kanban=kanbanDao.findOne(id);
 			if(kanban==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			if(kanban.getSections()==null) {
 				return sectionsDto;

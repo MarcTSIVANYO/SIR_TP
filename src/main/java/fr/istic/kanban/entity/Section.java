@@ -11,7 +11,7 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "TYPE_SECTION")
 public class Section implements Serializable {
 
-	long id;
+	Long id;
 	String libelle;
 	int position; 
 	Kanban kanban;
@@ -27,10 +27,10 @@ public class Section implements Serializable {
 	}
 	@Id
 	@GeneratedValue
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	 

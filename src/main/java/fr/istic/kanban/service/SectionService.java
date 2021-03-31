@@ -21,7 +21,7 @@ public class SectionService {
 		EnAttente section = new EnAttente();
 		section.setLibelle(sectionDto.getLibelle());
 		section.setPosition(sectionDto.getPosition());
-		section.setKanban(sectionDto.getKanban());
+		section.setKanban(sectionDto.getKanban().convertToEntity());
 		//section.setFiches(new ArrayList<>());
 
        sectionDao.save(section);

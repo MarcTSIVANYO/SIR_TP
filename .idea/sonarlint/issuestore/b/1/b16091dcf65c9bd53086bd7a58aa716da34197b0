@@ -1,6 +1,6 @@
 
-V	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(Ì¼ãî
-M
-java:S1128"8Remove this unused import 'javax.persistence.OneToMany'.(«õù;
-<
-java:S1948"!Make "tags" private or transient.(À­‹†ıÿÿÿÿ
+^
+java:S1710"<Remove the 'NamedQueries' wrapper from this annotation group(¨‘¯¼ûÿÿÿÿ8 åÓÃˆ/
+V	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(Ì¼ãî
+C
+java:S1948"!Make "tags" private or transient.(À­‹†ıÿÿÿÿ8½°áÃˆ/

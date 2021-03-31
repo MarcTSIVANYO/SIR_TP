@@ -1,0 +1,30 @@
+
+R
+java:S1128"7Remove this unused import 'fr.istic.kanban.dao.TagDao'.(¶†à­øÿÿÿÿ
+\
+java:S1128
+"ARemove this unused import 'javax.persistence.PersistenceContext'.(ê°İÒıÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+Q
+java:S1128";Remove this unused import 'fr.istic.kanban.dao.SectionDao'.(ñİà
+Q	java:S125,"<This block of commented-out lines of code should be removed.(¨ùŒ÷
+Q	java:S1254"<This block of commented-out lines of code should be removed.(­‰Üä
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(œÊìşÿÿÿÿ
+S	java:S106F"9Replace this use of System.out or System.err by a logger.(¯¯›Õşÿÿÿÿ
+N	java:S106H"9Replace this use of System.out or System.err by a logger.(×ÎÃÅ
+M	java:S106J"9Replace this use of System.out or System.err by a logger.(»‰ùC
+S	java:S106N"9Replace this use of System.out or System.err by a logger.(ÄªÑûşÿÿÿÿ
+S	java:S106V"9Replace this use of System.out or System.err by a logger.(“•Õ®üÿÿÿÿ
+S	java:S106X"9Replace this use of System.out or System.err by a logger.(Ü¡÷Ëüÿÿÿÿ
+S	java:S106Z"9Replace this use of System.out or System.err by a logger.(½¾¡×ùÿÿÿÿ
+N	java:S106^"9Replace this use of System.out or System.err by a logger.(Ô©€›
+S	java:S106g"9Replace this use of System.out or System.err by a logger.(À©ò–ûÿÿÿÿ
+S	java:S106i"9Replace this use of System.out or System.err by a logger.(áã€©ıÿÿÿÿ
+N	java:S106l"9Replace this use of System.out or System.err by a logger.(³´ÇÉ
+A
+java:S1068!"+Remove this unused "manager" private field.(·‘û
+D
+java:S1144R".Remove this unused private "listFiche" method.(¿´±Û
+H
+java:S1144c"-Remove this unused private "listUser" method.(é„Ê×ıÿÿÿÿ

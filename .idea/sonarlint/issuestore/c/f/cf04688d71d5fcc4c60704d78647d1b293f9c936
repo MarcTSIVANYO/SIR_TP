@@ -1,0 +1,23 @@
+
+o
+java:S1171d"YMove the contents of this initializer to a standard constructor or to field initializers.(º·êÔ
+E
+java:S3740d"/Provide the parametrized type for this generic.(º·êÔ
+V
+java:S1854/"@Remove this useless assignment to local variable "numOfKanbans".(Š®Í£
+]	java:S125L"<This block of commented-out lines of code should be removed.(»ñÂ®ÿÿÿÿÿ8÷ç¬Æˆ/
+B
+java:S3599d",Use another way to initialize this instance.(º·êÔ
+V	java:S125x"<This block of commented-out lines of code should be removed.(¯æ¥ÿÿÿÿÿ
+M
+java:S1854<"7Remove this useless assignment to local variable "web".(ÍÇ‰š
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(œÊìþÿÿÿÿ
+]	java:S125V"<This block of commented-out lines of code should be removed.(“Ž®ùÿÿÿÿ8þ½çÆˆ/
+O	java:S106‚"9Replace this use of System.out or System.err by a logger.(á„ð“
+G
+java:S1481/"1Remove this unused "numOfKanbans" local variable.(Š®Í£
+X	java:S125R"<This block of commented-out lines of code should be removed.(¨ÜŸê8˜‚ôÆˆ/
+>
+java:S1481<"(Remove this unused "web" local variable.(ÍÇ‰š
+T	java:S106„"9Replace this use of System.out or System.err by a logger.(Ä˜ðÜùÿÿÿÿ
+Q	java:S1251"<This block of commented-out lines of code should be removed.(¤¢œÚ

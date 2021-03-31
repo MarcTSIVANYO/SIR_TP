@@ -12,7 +12,7 @@ import javax.persistence.*;
 		@NamedQuery(name = "touteslesfiches", query = "select f from Fiche as f")
 })
 public class Fiche  implements Serializable  {
-	long id;
+	Long id;
 	String libelle;
 	String lieu;
 	String url;
@@ -41,10 +41,10 @@ public class Fiche  implements Serializable  {
 	
 	@Id
 	@GeneratedValue
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
