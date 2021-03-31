@@ -19,30 +19,34 @@ package fr.istic.kanban.run;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import fr.istic.kanban.res.KanbanResource;
-import fr.istic.kanban.res.TagResource;
-import fr.istic.kanban.res.UserResource;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import fr.istic.kanban.res.SectionResource; 
-import fr.istic.kanban.res.FicheResource; 
+import fr.istic.kanban.res.*;
+import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 
-@EnableSwagger2
+@ApplicationPath("/")
 public class TestApplication extends Application {
 
 
     @Override
     public Set<Class<?>> getClasses() {
 
-        final Set<Class<?>> clazzes = new HashSet<Class<?>>();
+        final Set<Class<?>> resources = new HashSet<Class<?>>();
 
-        clazzes.add(KanbanResource.class);
-        clazzes.add(TagResource.class);
-        clazzes.add(UserResource.class);
-        clazzes.add(SectionResource.class);
-        clazzes.add(FicheResource.class);
-        return clazzes;
+        resources.add(OpenApiResource.class);
+
+        resources.add(KanbanResource.class);
+        resources.add(TagResource.class);
+        resources.add(UserResource.class);
+        resources.add(SectionResource.class);
+        resources.add(FicheResource.class);
+
+        resources.add(SwaggerResource.class);
+
+        /*resources.add(io.swagger.jaxrs.listing.ApiListingResource.class);
+        resources.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);*/
+        return resources;
     }
 
 }

@@ -3,16 +3,15 @@ package fr.istic.kanban.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany; 
+import javax.persistence.*;
+
 /**
  * 
  */  
 @Entity
+@NamedQueries({
+		@NamedQuery(name="tousleskanbans", query = "select k from Kanban as k")
+})
 public class Kanban implements Serializable {
  
 	long id;
@@ -54,7 +53,7 @@ public class Kanban implements Serializable {
 		this.admin = admin;
 	}
 	
-	@OneToMany(mappedBy = "kanban")
+	@OneToMany(mappedBy = "kanban",cascade = CascadeType.PERSIST)
 	public List<Section> getSections() {
 		return sections;
 	}

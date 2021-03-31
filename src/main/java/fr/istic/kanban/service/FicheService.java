@@ -13,7 +13,7 @@ public class FicheService {
 	private final FicheDao ficheDao = new FicheDao(); 
 	
 	/*
-	 * Enregistrer une entité
+	 * Enregistrer une entitï¿½
 	 */
 	public void save(FicheDto ficheDto) { 
 		Fiche fiche=new Fiche(ficheDto.getLibelle(),ficheDto.getLieu(), ficheDto.getUrl(), ficheDto.getDateButoire(), ficheDto.getUrl(), ficheDto.getOwner(),ficheDto.getSection(),ficheDto.getTags());
@@ -21,7 +21,7 @@ public class FicheService {
     }	
 
 	/*
-	 * Recupérer la liste de l'entité
+	 * Recupï¿½rer la liste de l'entitï¿½
 	 */
 	public List<FicheDto> findAll() { 
         List<Fiche> fiches=ficheDao.findAll(); 
@@ -31,7 +31,7 @@ public class FicheService {
     }	 
 
 	/*
-	 * Recupérer une valeur à partir d'un id
+	 * Recupï¿½rer une valeur ï¿½ partir d'un id
 	 * NotFundException
 	 */
 	public FicheDto getById(Long id) {
@@ -40,18 +40,18 @@ public class FicheService {
 		try {
 			Fiche fiche=ficheDao.findOne(id);
 			if(fiche==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			ficheDto=new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), fiche.getOwner(),fiche.getSection());
 	    }catch (Exception e){
 	        System.err.println("Error : " +e.getMessage());
-			throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+			throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 	    } 
 		return ficheDto; 
 	}
 	
 	/*
-	 * Recupérer une valeur à partir d'un id
+	 * Recupï¿½rer une valeur ï¿½ partir d'un id
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public FicheDto update(Long id, FicheDto ficheDto) {
@@ -59,14 +59,14 @@ public class FicheService {
 		try {
 			Fiche fiche=ficheDao.findOne(id);
 			if(fiche==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			fiche.setLibelle(ficheDto.getLibelle());
 			fiche.setLieu(ficheDto.getLieu());
 			fiche.setNote(ficheDto.getNote());
 			fiche.setUrl(ficheDto.getUrl());
 			fiche.setDateButoire(ficheDto.getDateButoire());
-			fiche.setDureeminite(ficheDto.getDureeminite());
+			fiche.setDureeminute(ficheDto.getDureeminite());
 			fiche.setOwner(ficheDto.getOwner());
 			fiche.setSection(ficheDto.getSection());
 			fiche.setTags(ficheDto.getTags());
@@ -78,7 +78,7 @@ public class FicheService {
 		return ficheDto; 
 	}
 	/*
-	 * Supprimer une entité
+	 * Supprimer une entitï¿½
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public void deleteById(Long id) {

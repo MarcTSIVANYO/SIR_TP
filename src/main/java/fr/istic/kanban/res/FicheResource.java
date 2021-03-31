@@ -11,7 +11,8 @@ import fr.istic.kanban.dto.FicheDto;
 import fr.istic.kanban.service.FicheService;
 
 @Path("/api/fiche")
-public class FicheResource { 
+public class FicheResource {
+
 	FicheService ficheService = new FicheService(); 
 	@GET
 	@Path("/")

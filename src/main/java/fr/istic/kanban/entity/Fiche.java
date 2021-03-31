@@ -4,24 +4,21 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
+@SuppressWarnings("JpaQlInspection")
 @Entity
-public class Fiche  implements Serializable  {  
+@NamedQueries({
+		@NamedQuery(name = "touteslesfiches", query = "select f from Fiche as f")
+})
+public class Fiche  implements Serializable  {
 	long id;
 	String libelle;
 	String lieu;
 	String url;
 	Date dateButoire;
 	String note;	
-	int  dureeminite; 
+	int dureeminute;
 	User owner;  
 	Section section; 
 	List<Tag> tags;
@@ -81,11 +78,11 @@ public class Fiche  implements Serializable  {
 	public void setNote(String note) {
 		this.note = note;
 	}
-	public int getDureeminite() {
-		return dureeminite;
+	public int getDureeminute() {
+		return dureeminute;
 	}
-	public void setDureeminite(int dureeminite) {
-		this.dureeminite = dureeminite;
+	public void setDureeminute(int dureeminute) {
+		this.dureeminute = dureeminute;
 	}
 	@ManyToOne
 	public User getOwner() {
@@ -117,7 +114,7 @@ public class Fiche  implements Serializable  {
 	@Override
 	public String toString() {
 		return "Fiche [id=" + id + ", libelle=" + libelle + ", lieu=" + lieu + ", url=" + url + ", dateButoire="
-				+ dateButoire + ", note=" + note + ", dureeminite=" + dureeminite + ", owner=" + owner + "]";
+				+ dateButoire + ", note=" + note + ", dureeminute=" + dureeminute + ", owner=" + owner + "]";
 	}
 	  
 }

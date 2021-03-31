@@ -10,6 +10,8 @@ import io.undertow.Undertow;
  * RESTfull microservice, based on JAX-RS and JBoss Undertow
  *
  */
+
+
 public class RestServer {
 
     private static final Logger logger = Logger.getLogger(RestServer.class.getName());
@@ -24,7 +26,7 @@ public class RestServer {
 
         ut.start(
                 Undertow.builder()
-                        .addHttpListener(8090, "localhost")
+                        .addHttpListener(8080, "localhost")
 
         );
 
