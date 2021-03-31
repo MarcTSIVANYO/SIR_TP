@@ -15,7 +15,7 @@ public class KanbanService {
 	private final KanbanDao kanbanDao = new KanbanDao(); 
 	
 	/*
-	 * Enregistrer une entité
+	 * Enregistrer une entitï¿½
 	 */
 	public void save(KanbanDto kanbanDto) { 
         Kanban kanban=new Kanban(kanbanDto.getNom(), kanbanDto.getAdmin());
@@ -23,17 +23,24 @@ public class KanbanService {
     }	
 	
 	/*
-	 * Recupérer la liste de l'entité
+	 * Recupï¿½rer la liste de l'entitï¿½
 	 */
 	public List<KanbanDto> findAll() { 
+<<<<<<< HEAD
         List<Kanban> kanbans=kanbanDao.findAll(); 
 		List<KanbanDto> kanbansDto = new ArrayList<>(); 
 		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban)) );
+=======
+       // List<Kanban> kanbans=kanbanDao.findAll();
+        List<Kanban> kanbans=kanbanDao.getAllKanban();
+		List<KanbanDto> kanbansDto = new ArrayList<>();
+		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban.getId(),kanban.getNom(),kanban.getAdmin())) );
+>>>>>>> kanban-heritage-namedQueries
 		return kanbansDto; 
     }	 
 
 	/*
-	 * Recupérer une valeur à partir d'un id
+	 * Recupï¿½rer une valeur ï¿½ partir d'un id
 	 * NotFundException
 	 */
 	public KanbanDto getById(Long id) {
@@ -42,18 +49,18 @@ public class KanbanService {
 		try {
 			Kanban kanban=kanbanDao.findOne(id);
 			if(kanban==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			kanbanDto=new KanbanDto(kanban);
         }catch (Exception e){
             System.err.println("Error : " +e.getMessage());
-			throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+			throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
         } 
 		return kanbanDto; 
 	}
 
 	/*
-	 * Recupérer une valeur à partir d'un id
+	 * Recupï¿½rer une valeur ï¿½ partir d'un id
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public KanbanDto update(Long id, KanbanDto kanbanDto) {
@@ -61,7 +68,7 @@ public class KanbanService {
 		try {
 			Kanban kanban=kanbanDao.findOne(id);
 			if(kanban==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			kanban.setNom(kanbanDto.getNom());
 			kanban.setAdmin(kanbanDto.getAdmin());
@@ -75,7 +82,7 @@ public class KanbanService {
 	}
 	
 	/*
-	 * Supprimer une entité
+	 * Supprimer une entitï¿½
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public void deleteById(Long id) {

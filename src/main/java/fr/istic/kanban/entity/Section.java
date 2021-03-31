@@ -4,14 +4,11 @@ package fr.istic.kanban.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany; 
+import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TYPE_SECTION")
 public class Section implements Serializable {
 
 	long id;
@@ -54,9 +51,20 @@ public class Section implements Serializable {
 	public Kanban getKanban() {
 		return kanban;
 	}
+
 	public void setKanban(Kanban kanban) {
 		this.kanban = kanban;
 	}
+
+	/*@OneToMany(mappedBy = "section", cascade = CascadeType.PERSIST)
+	public List<Fiche> getFiches() {
+		return fiches;
+	}
+
+	public void setFiches(List<Fiche> fiches) {
+		this.fiches = fiches;
+	}*/
+
 	@Override
 	public String toString() {
 		return "Section [id=" + id + ", libelle=" + libelle + ", positions=" + position + "]";

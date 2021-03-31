@@ -1,0 +1,5 @@
+fr/istic/kanban/service/UserServiceTest.class
+fr/istic/kanban/service/SectionServiceTest.class
+fr/istic/kanban/service/KanbanServiceTest.class
+fr/istic/kanban/service/FicheServiceTest.class
+fr/istic/kanban/service/TagServiceTest.class

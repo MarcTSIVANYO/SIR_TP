@@ -33,17 +33,17 @@ import fr.istic.kanban.res.FicheResource;
 public class TestApplication extends Application {
 	     @Override
     public Set<Class<?>> getClasses() {
-        final Set<Class<?>> clazzes = new HashSet<Class<?>>();
-        clazzes.add(KanbanResource.class);
-        clazzes.add(TagResource.class);
-        clazzes.add(UserResource.class);
-        clazzes.add(SectionResource.class);
-        clazzes.add(FicheResource.class);
-        //clazzes.add(ApiListingResource.class);
-        //clazzes.add(SwaggerSerializers.class); // SWAGGER endpoints
-        clazzes.add(OpenApiResource.class);
-        clazzes.add(SwaggerResource.class);
-        return clazzes;
+
+        final Set<Class<?>> resources = new HashSet<Class<?>>();
+
+        resources.add(KanbanResource.class);
+        resources.add(TagResource.class);
+        resources.add(UserResource.class);
+        resources.add(SectionResource.class);
+        resources.add(FicheResource.class); 
+        resources.add(SwaggerResource.class); 
+        resources.add(OpenApiResource.class);
+        return resources;
     }
 
 }

@@ -8,9 +8,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType; 
 import fr.istic.kanban.dto.FicheDto;
-import fr.istic.kanban.service.FicheService; 
+import fr.istic.kanban.service.FicheService;
+
 @Path("/api/fiches")
-public class FicheResource { 
+public class FicheResource {
+
 	FicheService ficheService = new FicheService(); 
 	@GET
 	@Path("/")

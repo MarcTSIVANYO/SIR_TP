@@ -3,9 +3,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.NotFoundException;  
-import fr.istic.kanban.dao.SectionDao;
+import fr.istic.kanban.dao.SectionDao; 
+import fr.istic.kanban.dto.SectionDto;
+import fr.istic.kanban.entity.EnAttente;
 import fr.istic.kanban.dto.KanbanDto;
-import fr.istic.kanban.dto.SectionDto; 
 import fr.istic.kanban.entity.Section;
 import fr.istic.kanban.exceptions.CustomException; 
 
@@ -13,15 +14,21 @@ public class SectionService {
 	private final SectionDao sectionDao = new SectionDao(); 
 	
 	/*
-	 * Enregistrer une entité
+	 * Enregistrer une entitï¿½
 	 */
 	public void save(SectionDto sectionDto) { 
-		Section section=new Section(sectionDto.getLibelle(), sectionDto.getPosition(), sectionDto.getKanban().convertToEntity());
+		//Section section=new Section(sectionDto.getLibelle(), sectionDto.getPosition(), sectionDto.getKanban());
+		EnAttente section = new EnAttente();
+		section.setLibelle(sectionDto.getLibelle());
+		section.setPosition(sectionDto.getPosition());
+		section.setKanban(sectionDto.getKanban());
+		//section.setFiches(new ArrayList<>());
+
        sectionDao.save(section);
    }	
 	
 	/*
-	 * Recupérer la liste de l'entité
+	 * Recupï¿½rer la liste de l'entitï¿½
 	 */
 	public List<SectionDto> findAll() { 
        List<Section> sections=sectionDao.findAll(); 
@@ -34,7 +41,7 @@ public class SectionService {
    }	 
 
 	/*
-	 * Recupérer une valeur à partir d'un id
+	 * Recupï¿½rer une valeur ï¿½ partir d'un id
 	 * NotFundException
 	 */
 	public SectionDto getById(Long id) {
@@ -43,18 +50,18 @@ public class SectionService {
 		try {
 			Section section=sectionDao.findOne(id);
 			if(section==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			sectionDto=new SectionDto(section.getId(),section.getLibelle(),section.getPosition(),new KanbanDto(section.getKanban()));
        }catch (Exception e){
            System.err.println("Error : " +e.getMessage());
-			throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+			throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
        } 
 		return sectionDto; 
 	}
 
 	/*
-	 * Recupérer une valeur à partir d'un id
+	 * Recupï¿½rer une valeur ï¿½ partir d'un id
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public SectionDto update(Long id, SectionDto sectionDto) {
@@ -62,7 +69,7 @@ public class SectionService {
 		try {
 			Section section=sectionDao.findOne(id);
 			if(section==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			section.setLibelle(sectionDto.getLibelle());
 			section.setPosition(sectionDto.getPosition());
@@ -77,7 +84,7 @@ public class SectionService {
 	}
 	
 	/*
-	 * Supprimer une entité
+	 * Supprimer une entitï¿½
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public void deleteById(Long id) {

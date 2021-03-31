@@ -7,4 +7,5 @@ public class FicheDao  extends AbstractJpaDao<Long, Fiche> {
 		super(Fiche.class); 
 	}
 
+	
 }

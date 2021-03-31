@@ -8,18 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
 
-import fr.istic.kanban.dao.FicheDao;
-import fr.istic.kanban.dao.KanbanDao;
-import fr.istic.kanban.dao.SectionDao;
-import fr.istic.kanban.dao.TagDao;
-import fr.istic.kanban.dao.UserDao;
-import fr.istic.kanban.entity.Fiche;
-import fr.istic.kanban.entity.Kanban;
-import fr.istic.kanban.entity.Section;
-import fr.istic.kanban.entity.Tag;
-import fr.istic.kanban.entity.User;
+import fr.istic.kanban.entity.*;
 
 public class JpaTest {
 
@@ -83,21 +73,29 @@ public class JpaTest {
 			manager.persist(kan);
 			manager.persist(kan2);
 			
-			Section sectionOne = new Section("En attente",1,kan); 
-			
-			Section sectionTwo =new Section(); 
+			//Section sectionOne = new Section("En attente",1,kan);
+
+			EnAttente sectionAttente = new EnAttente();
+			sectionAttente.setLibelle("En attente");
+			sectionAttente.setPosition(1);
+			sectionAttente.setKanban(kan);
+		//sectionAttente.setFiches(new ArrayList<>());
+
+		manager.persist(sectionAttente);
+
+			/*Section sectionTwo =new Section();
 			sectionTwo.setLibelle("En cours");
 			sectionTwo.setPosition(2); 
 			sectionTwo.setKanban(kan);
 
 			Section sectionTree =new Section(); 
-			sectionTree.setLibelle("Réalisé");
+			sectionTree.setLibelle("Rï¿½alisï¿½");
 			sectionTree.setPosition(3); 
 			sectionTwo.setKanban(kan2);  
 			
-			manager.persist(sectionOne);
+			manager.persist(sectionAttente);
 			manager.persist(sectionTwo);
-			manager.persist(sectionTree);
+			manager.persist(sectionTree);*/
 			 
 			ArrayList<Tag> tags = new ArrayList() {{
 				 add(coffee);
@@ -111,7 +109,7 @@ public class JpaTest {
 				fiche.setLieu("At work");
 				fiche.setOwner(user);//User has to be persisted before persisting the Fiche
 				fiche.setNote("Prioritaire");
-				fiche.setSection(sectionOne);
+				fiche.setSection(sectionAttente);
 				fiche.setUrl("https://en.wikibooks.org/wiki/Java_Persistence/ManyToMany#:~:text=All%20ManyToMany%20relationships%20require%20a,object's%20primary%20key%20(%20inverseJoinColumns%20).");
 				fiche.setDateButoire(new java.sql.Date(Calendar.getInstance().getTimeInMillis()));
 				fiche.setTags(tags);//Here the problem?
@@ -120,7 +118,7 @@ public class JpaTest {
 				manager.persist(fiche);
 				
 				/*Fiche thisFiche = manager.find( Fiche.class, 1L	 );            
-	            System.out.println( "Tags associés à une fiche" );
+	            System.out.println( "Tags associï¿½s ï¿½ une fiche" );
 	            for( Tag associatedTag : thisFiche.getTags() ) {
 	                System.out.println( associatedTag );
 	            }*/

@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 C:\Users\Marc\Documents\S2 M1\SIR\tpjpa2020\src\test\java\fr\istic\kanban\service\FicheServiceTest.java
 C:\Users\Marc\Documents\S2 M1\SIR\tpjpa2020\src\test\java\fr\istic\kanban\service\KanbanServiceTest.java
 C:\Users\Marc\Documents\S2 M1\SIR\tpjpa2020\src\test\java\fr\istic\kanban\service\TagServiceTest.java
 C:\Users\Marc\Documents\S2 M1\SIR\tpjpa2020\src\test\java\fr\istic\kanban\service\SectionServiceTest.java
 C:\Users\Marc\Documents\S2 M1\SIR\tpjpa2020\src\test\java\fr\istic\kanban\service\UserServiceTest.java
+=======
+/home/sadou/cours/M1/SIR/Projet/SIR_TP/src/test/java/fr/istic/kanban/service/TagServiceTest.java
+/home/sadou/cours/M1/SIR/Projet/SIR_TP/src/test/java/fr/istic/kanban/service/UserServiceTest.java
+/home/sadou/cours/M1/SIR/Projet/SIR_TP/src/test/java/fr/istic/kanban/service/KanbanServiceTest.java
+/home/sadou/cours/M1/SIR/Projet/SIR_TP/src/test/java/fr/istic/kanban/service/SectionServiceTest.java
+/home/sadou/cours/M1/SIR/Projet/SIR_TP/src/test/java/fr/istic/kanban/service/FicheServiceTest.java
+>>>>>>> kanban-heritage-namedQueries
