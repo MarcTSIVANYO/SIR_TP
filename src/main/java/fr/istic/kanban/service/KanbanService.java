@@ -6,7 +6,9 @@ import java.util.List;
 import javax.ws.rs.NotFoundException; 
 import fr.istic.kanban.dao.KanbanDao;
 import fr.istic.kanban.dto.KanbanDto;
-import fr.istic.kanban.entity.Kanban; 
+import fr.istic.kanban.dto.SectionDto;
+import fr.istic.kanban.entity.Kanban;
+import fr.istic.kanban.entity.Section;
 import fr.istic.kanban.exceptions.CustomException; 
 
 public class KanbanService {
@@ -26,7 +28,7 @@ public class KanbanService {
 	public List<KanbanDto> findAll() { 
         List<Kanban> kanbans=kanbanDao.findAll(); 
 		List<KanbanDto> kanbansDto = new ArrayList<>(); 
-		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban.getId(),kanban.getNom(),kanban.getAdmin())) );
+		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban)) );
 		return kanbansDto; 
     }	 
 
@@ -42,7 +44,7 @@ public class KanbanService {
 			if(kanban==null) { 
 				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
 			}
-			kanbanDto=new KanbanDto(kanban.getId(),kanban.getNom(),kanban.getAdmin());
+			kanbanDto=new KanbanDto(kanban);
         }catch (Exception e){
             System.err.println("Error : " +e.getMessage());
 			throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
@@ -79,6 +81,30 @@ public class KanbanService {
 	public void deleteById(Long id) {
 		CustomException.isValid(id);  
 		kanbanDao.deleteById(id);
+	}
+	
+	public List<SectionDto> getSectionById(Long id){
+		CustomException.isValid(id);  
+
+		List<SectionDto> sectionsDto = new ArrayList<>(); 
+		try {
+			Kanban kanban=kanbanDao.findOne(id);
+			if(kanban==null) { 
+				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+			}
+			if(kanban.getSections()==null) {
+				return sectionsDto;
+			}
+			for(Section section : kanban.getSections()) {
+				KanbanDto kanbanDto=new KanbanDto(kanban);
+				sectionsDto.add(new SectionDto(section.getId(),section.getLibelle(),section.getPosition(), kanbanDto ));
+			}
+			return sectionsDto;  
+        }catch (Exception e){
+            System.err.println("Error : " +e.getMessage());
+			throw new NotFoundException(""+e.getMessage());
+        } 
+		
 	}
 	
 }

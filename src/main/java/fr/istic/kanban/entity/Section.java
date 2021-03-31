@@ -61,6 +61,5 @@ public class Section implements Serializable {
 	public String toString() {
 		return "Section [id=" + id + ", libelle=" + libelle + ", positions=" + position + "]";
 	}
-	  
-
+	 
 }

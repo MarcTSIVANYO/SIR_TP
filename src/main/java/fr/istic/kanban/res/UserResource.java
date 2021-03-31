@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import fr.istic.kanban.dto.UserDto;
 import fr.istic.kanban.service.UserService;
 
-@Path("/api/users")
+@Path("/api/users") 
 public class UserResource { 
 	UserService userService = new UserService(); 
 	@GET

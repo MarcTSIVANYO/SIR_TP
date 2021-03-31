@@ -2,25 +2,31 @@ package fr.istic.kanban.dto;
 
 import java.util.List;
 
-import fr.istic.kanban.entity.Section;
+import fr.istic.kanban.entity.Kanban; 
 import fr.istic.kanban.entity.User;
 
 public class KanbanDto {
 
 	Long id;
 	String nom;
-	User admin; 
-	//List<Section> sections;
-	public KanbanDto(Long id, String nom, User admin/*, List<Section> sections*/) {
+	User admin;   
+	public KanbanDto(Long id, String nom, User admin, List<Long>sectionsId) {
 		super();
 		this.id = id;
 		this.nom = nom;
-		this.admin = admin;
-		//this.sections = sections;
+		this.admin = admin; 
 	}
 	public KanbanDto() { 
 	}
 
+	public KanbanDto(Kanban kanban) { 
+		super();
+		this.id = kanban.getId();
+		this.nom = kanban.getNom();
+		this.admin = kanban.getAdmin();  
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -39,11 +45,9 @@ public class KanbanDto {
 	}
 	public void setAdmin(User admin) {
 		this.admin = admin;
-	}
-	/*public List<Section> getSections() {
-		return sections;
-	}
-	public void setSections(List<Section> sections) {
-		this.sections = sections;
-	}*/
+	} 
+	
+	public Kanban convertToEntity() {
+		return new Kanban(this.nom,this.admin);
+	} 
 }

@@ -6,9 +6,9 @@ public class SectionDto {
 	Long id;
 	String libelle;
 	int position; 
-	Kanban kanban;
+	KanbanDto kanban;
 	
-	public SectionDto(Long id, String libelle, int position, Kanban kanban) { 
+	public SectionDto(Long id, String libelle, int position, KanbanDto kanban) { 
 		this.id=id;
 		this.position=position;
 		this.libelle=libelle;
@@ -42,11 +42,11 @@ public class SectionDto {
 		this.position = position;
 	}
 
-	public Kanban getKanban() {
+	public KanbanDto getKanban() {
 		return kanban;
 	}
 
-	public void setKanban(Kanban kanban) {
+	public void setKanban(KanbanDto kanban) {
 		this.kanban = kanban;
 	}
 

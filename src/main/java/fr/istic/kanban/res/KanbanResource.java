@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
 import fr.istic.kanban.dto.KanbanDto;
+import fr.istic.kanban.dto.SectionDto;
 import fr.istic.kanban.service.KanbanService; 
  
 @Path("/api/kanban")
@@ -51,5 +52,11 @@ public class KanbanResource {
 	public void deleteById(@PathParam("id") Long id){ 
 		  kanbanService.deleteById(id);; 
 	}
- 
+
+	@GET
+	@Path("/{id}/sections")
+	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
+	public List<SectionDto> getSectionById(@PathParam("id") Long id){ 
+		return kanbanService.getSectionById(id); 
+	}
 }

@@ -8,7 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany; 
+import javax.persistence.OneToMany;
+
+import fr.istic.kanban.dto.KanbanDto; 
 /**
  * 
  */  
@@ -65,6 +67,5 @@ public class Kanban implements Serializable {
 	public String toString() {
 		return "Kanban [id=" + id + ", nom=" + nom +  ", admin=" + admin.getEmail() + "]";
 	}
-	  	 
-
+	 
 }

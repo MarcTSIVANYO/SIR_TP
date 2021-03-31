@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.mockito.MockitoAnnotations;
 
 import fr.istic.kanban.dao.SectionDao;
+import fr.istic.kanban.dto.KanbanDto;
 import fr.istic.kanban.dto.SectionDto;
 import fr.istic.kanban.entity.Kanban;
 import fr.istic.kanban.entity.Section;
@@ -66,11 +67,11 @@ public class SectionServiceTest {
         list.add(sectionTwo); 
         list.add(sectionTree); 
          
-        SectionDto sectionOneDto=new SectionDto(sectionOne.getId(),sectionOne.getLibelle(),sectionOne.getPosition(),sectionOne.getKanban());
+        SectionDto sectionOneDto=new SectionDto(sectionOne.getId(),sectionOne.getLibelle(),sectionOne.getPosition(),new KanbanDto(sectionOne.getKanban()));
 
-        SectionDto sectionTwoDto=new SectionDto(sectionTwo.getId(),sectionTwo.getLibelle(),sectionTwo.getPosition(),sectionTwo.getKanban());
+        SectionDto sectionTwoDto=new SectionDto(sectionTwo.getId(),sectionTwo.getLibelle(),sectionTwo.getPosition(),new KanbanDto(sectionTwo.getKanban()));
 
-        SectionDto sectionTreeDto=new SectionDto(sectionTree.getId(),sectionTree.getLibelle(),sectionTree.getPosition(),sectionTree.getKanban());
+        SectionDto sectionTreeDto=new SectionDto(sectionTree.getId(),sectionTree.getLibelle(),sectionTree.getPosition(),new KanbanDto(sectionTree.getKanban()));
 
         listDto.add(sectionOneDto);
         listDto.add(sectionTwoDto);
@@ -105,7 +106,7 @@ public class SectionServiceTest {
 		section.setPosition(1);
 		section.setKanban(kanban);
 
-        SectionDto sectionDto=new SectionDto(section.getId(),section.getLibelle(),section.getPosition(),section.getKanban());
+        SectionDto sectionDto=new SectionDto(section.getId(),section.getLibelle(),section.getPosition(),new KanbanDto(section.getKanban()));
 
         when(sectionService.getById(2L)).thenReturn(sectionDto);
          
@@ -132,7 +133,7 @@ public class SectionServiceTest {
 		section.setPosition(1);
 		section.setKanban(kanban);
 
-        SectionDto sectionDto=new SectionDto(section.getId(),section.getLibelle(),section.getPosition(),section.getKanban());
+        SectionDto sectionDto=new SectionDto(section.getId(),section.getLibelle(),section.getPosition(),new KanbanDto(section.getKanban()));
         
         sectionService.save(sectionDto); 
         verify(sectionService, times(1)).save(sectionDto);
@@ -155,7 +156,7 @@ public class SectionServiceTest {
 		section.setPosition(1);
 		section.setKanban(kanban);
 
-        SectionDto sectionDto=new SectionDto(section.getId(),section.getLibelle(),section.getPosition(),section.getKanban()); 
+        SectionDto sectionDto=new SectionDto(section.getId(),section.getLibelle(),section.getPosition(),new KanbanDto(section.getKanban())); 
        
          when(sectionService.getById(sectionDto.getId())).thenReturn(sectionDto).thenReturn(null);
         //test

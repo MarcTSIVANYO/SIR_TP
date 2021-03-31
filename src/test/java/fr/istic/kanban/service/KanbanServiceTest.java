@@ -52,8 +52,8 @@ public class KanbanServiceTest {
         list.add(kanbanOne);
         list.add(kanbanTwo); 
          
-        KanbanDto kanbanOneDto=new KanbanDto(kanbanOne.getId(),kanbanOne.getNom(),kanbanOne.getAdmin());
-        KanbanDto kanbanTwoDto=new KanbanDto(kanbanTwo.getId(),kanbanTwo.getNom(),kanbanTwo.getAdmin());
+        KanbanDto kanbanOneDto=new KanbanDto(kanbanOne);
+        KanbanDto kanbanTwoDto=new KanbanDto(kanbanTwo);
         listDto.add(kanbanOneDto);
         listDto.add(kanbanTwoDto);
         
@@ -80,7 +80,7 @@ public class KanbanServiceTest {
         kanban.setId(2L);
         kanban.setNom("Google");
         kanban.setAdmin(user);  
-        KanbanDto kanbanDto=new KanbanDto(kanban.getId(),kanban.getNom(),kanban.getAdmin()); 
+        KanbanDto kanbanDto=new KanbanDto(kanban); 
        
         when(kanbanService.getById(2L)).thenReturn(kanbanDto);
          
@@ -102,7 +102,7 @@ public class KanbanServiceTest {
         kanban.setId(2L);
         kanban.setNom("Google");
         kanban.setAdmin(user);  
-        KanbanDto kanbanDto=new KanbanDto(kanban.getId(),kanban.getNom(),kanban.getAdmin()); 
+        KanbanDto kanbanDto=new KanbanDto(kanban); 
         
         kanbanService.save(kanbanDto); 
         verify(kanbanService, times(1)).save(kanbanDto);
@@ -119,7 +119,7 @@ public class KanbanServiceTest {
         kanban.setId(2L);
         kanban.setNom("Google");
         kanban.setAdmin(user);  
-        KanbanDto kanbanDto=new KanbanDto(kanban.getId(),kanban.getNom(),kanban.getAdmin()); 
+        KanbanDto kanbanDto=new KanbanDto(kanban); 
        
          when(kanbanService.getById(kanbanDto.getId())).thenReturn(kanbanDto).thenReturn(null);
         //test
