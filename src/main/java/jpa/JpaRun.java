@@ -10,10 +10,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import fr.istic.kanban.entity.*;
+import fr.istic.kanban.service.FicheService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JpaRun {
 
 	private EntityManager manager;
+	private static Logger LOGGER = LoggerFactory.getLogger(FicheService.class);
 
 	public JpaRun(EntityManager manager) {
 		this.manager = manager;
@@ -30,7 +34,7 @@ public class JpaRun {
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 		try {
-			test.createKanbans();
+			test.populateDatabase();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -39,11 +43,77 @@ public class JpaRun {
 		test.listEmployees();
 			
    	 manager.close();
-		System.out.println(".. done");
+		LOGGER.info(".. done");
 	}
+
+	private void populateDatabase(){
+
+		User userPersisted = this.persistUser();
+
+		Kanban tableauKanban = new Kanban();
+		tableauKanban.setNom("Scrum Master");
+		tableauKanban.setAdmin(userPersisted);
+
+		EnAttente sectionEnAttente = new EnAttente();
+		sectionEnAttente.setLibelle("En attente");
+		sectionEnAttente.setPosition(1);
+
+		EnCours sectionEnCours = new EnCours();
+		sectionEnCours.setLibelle("En cours");
+		sectionEnCours.setPosition(2);
+
+		Execute sectionExecute = new Execute();
+		sectionExecute.setLibelle("Execute");
+		sectionExecute.setPosition(3);
+
+		tableauKanban.add(sectionEnAttente);
+		tableauKanban.add(sectionEnCours);
+		tableauKanban.add(sectionExecute);
+
+		Fiche fiche1 = new Fiche("Test");
+		fiche1.setOwner(userPersisted);
+		Fiche fiche2 = new Fiche("Dossier");
+		fiche2.setOwner(userPersisted);
+		Fiche fiche3 = new Fiche("User");
+		fiche3.setOwner(userPersisted);
+
+		sectionEnAttente.addFiche(fiche1);
+		sectionEnCours.addFiche(fiche2);
+		sectionExecute.addFiche(fiche3);
+
+		Tag tagOne = new Tag();
+		tagOne.setName("TagOneName");
+		tagOne.addFiche(fiche1);
+
+		Tag tagTwo = new Tag();
+		tagTwo.setName("TagTwotName");
+		tagTwo.addFiche(fiche3);
+
+		manager.persist(tableauKanban);
+
+		manager.persist(sectionEnAttente);
+		manager.persist(sectionEnCours);
+		manager.persist(sectionExecute);
+
+		manager.persist(fiche1);
+		manager.persist(fiche2);
+		manager.persist(fiche3);
+
+		manager.persist(tagOne);
+		manager.persist(tagTwo);
+	}
+
+	private User persistUser(){
+		User user = new User();
+		user.setName("Scrum Master");
+		user.setEmail("scr.master@gmail.com");
+		manager.persist(user);
+
+		return user;
+	}
+
 	
-	
-	private void createKanbans() {
+	/*private void createKanbans() {
 		int numOfKanbans = manager.createQuery("Select a From Section a", Section.class).getResultList().size();
 		
 		//User user = (User) manager.createQuery("Select u from User u where u.email='marctsivanyo@gmail.com'", User.class).getResultList();
@@ -82,7 +152,7 @@ public class JpaRun {
 
 		manager.persist(sectionAttente);
 
-			/*Section sectionTwo =new Section();
+			*//*Section sectionTwo =new Section();
 			sectionTwo.setLibelle("En cours");
 			sectionTwo.setPosition(2); 
 			sectionTwo.setKanban(kan);
@@ -94,7 +164,7 @@ public class JpaRun {
 			
 			manager.persist(sectionAttente);
 			manager.persist(sectionTwo);
-			manager.persist(sectionTree);*/
+			manager.persist(sectionTree);*//*
 			 
 			ArrayList<Tag> tags = new ArrayList() {{
 				 add(coffee);
@@ -116,13 +186,13 @@ public class JpaRun {
 
 				manager.persist(fiche);
 				
-				/*Fiche thisFiche = manager.find( Fiche.class, 1L	 );            
+				*//*Fiche thisFiche = manager.find( Fiche.class, 1L	 );
 	            System.out.println( "Tags associ�s � une fiche" );
 	            for( Tag associatedTag : thisFiche.getTags() ) {
 	                System.out.println( associatedTag );
-	            }*/
+	            }*//*
  
-	}
+	}*/
 
 	private void listEmployees() {
 		List<Kanban> resultList = manager.createQuery("Select a From Kanban a", Kanban.class).getResultList();

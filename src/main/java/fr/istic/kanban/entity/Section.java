@@ -2,6 +2,7 @@ package fr.istic.kanban.entity;
  
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -11,10 +12,13 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "TYPE_SECTION")
 public class Section implements Serializable {
 
-	long id;
+	Long id;
 	String libelle;
 	int position; 
 	Kanban kanban;
+
+	@ElementCollection(targetClass = Fiche.class)
+	List<Fiche> fiches = new ArrayList<>();
 	
 	public Section(String libelle, int position, Kanban kanban) {
 		this.position=position;
@@ -25,12 +29,12 @@ public class Section implements Serializable {
 	public Section() {
 		
 	}
-	@Id
+	@Id 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public long getId() {
+	public Long getId() { 
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	 
@@ -47,7 +51,8 @@ public class Section implements Serializable {
 	public void setPosition(int position) {
 		this.position = position;
 	}
-	 @ManyToOne
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	public Kanban getKanban() {
 		return kanban;
 	}
@@ -56,18 +61,22 @@ public class Section implements Serializable {
 		this.kanban = kanban;
 	}
 
-	/*@OneToMany(mappedBy = "section", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "section", cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
 	public List<Fiche> getFiches() {
 		return fiches;
 	}
 
 	public void setFiches(List<Fiche> fiches) {
 		this.fiches = fiches;
-	}*/
+	}
 
 	@Override
 	public String toString() {
 		return "Section [id=" + id + ", libelle=" + libelle + ", positions=" + position + "]";
 	}
-	 
+
+	public void addFiche(Fiche fiche) {
+		this.fiches.add(fiche);
+		fiche.setSection(this);
+	}
 }

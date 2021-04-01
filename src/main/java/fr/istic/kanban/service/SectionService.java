@@ -8,10 +8,13 @@ import fr.istic.kanban.dto.SectionDto;
 import fr.istic.kanban.entity.EnAttente;
 import fr.istic.kanban.dto.KanbanDto;
 import fr.istic.kanban.entity.Section;
-import fr.istic.kanban.exceptions.CustomException; 
+import fr.istic.kanban.exceptions.CustomException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SectionService {
-	private final SectionDao sectionDao = new SectionDao(); 
+	private final SectionDao sectionDao = new SectionDao();
+	private static Logger LOGGER = LoggerFactory.getLogger(FicheService.class);
 	
 	/*
 	 * Enregistrer une entit�
@@ -54,7 +57,7 @@ public class SectionService {
 			}
 			sectionDto=new SectionDto(section.getId(),section.getLibelle(),section.getPosition(),new KanbanDto(section.getKanban()));
        }catch (Exception e){
-           System.err.println("Error : " +e.getMessage());
+			LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException("Aucun resultat pour l'�lement avec l'identifiant "+id);
        } 
 		return sectionDto; 
@@ -77,7 +80,7 @@ public class SectionService {
 			sectionDao.update(section);
 			sectionDto.setId(id);
        }catch (Exception e){
-           System.err.println("Error : " +e.getMessage());
+			LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException(""+e.getMessage());
        } 
 		return sectionDto; 

@@ -10,7 +10,7 @@ public class KanbanDto {
 	Long id;
 	String nom;
 	User admin;   
-	public KanbanDto(Long id, String nom, User admin, List<Long>sectionsId) {
+	public KanbanDto(Long id, String nom, User admin) {
 		super();
 		this.id = id;
 		this.nom = nom;

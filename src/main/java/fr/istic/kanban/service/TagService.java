@@ -9,13 +9,16 @@ import fr.istic.kanban.dto.TagDto;
 import fr.istic.kanban.entity.Kanban;
 import fr.istic.kanban.entity.Section;
 import fr.istic.kanban.entity.Tag; 
-import fr.istic.kanban.exceptions.CustomException; 
+import fr.istic.kanban.exceptions.CustomException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TagService {
-	private final TagDao tagDao = new TagDao(); 
+	private final TagDao tagDao = new TagDao();
+	private static Logger LOGGER = LoggerFactory.getLogger(FicheService.class);
 	
 	/*
-	 * Enregistrer une entité
+	 * Enregistrer une entitï¿½
 	 */
 	public void save(TagDto tagDto) { 
         Tag tag=new Tag(tagDto.getName());
@@ -23,7 +26,7 @@ public class TagService {
     }	
 	
 	/*
-	 * Recupérer la liste de l'entité
+	 * Recupï¿½rer la liste de l'entitï¿½
 	 */
 	public List<TagDto> findAll() { 
         List<Tag> tags=tagDao.findAll(); 
@@ -33,7 +36,7 @@ public class TagService {
     }	 
 
 	/*
-	 * Recupérer une valeur à partir d'un id
+	 * Recupï¿½rer une valeur ï¿½ partir d'un id
 	 * NotFundException
 	 */
 	public TagDto getById(Long id) {
@@ -42,18 +45,18 @@ public class TagService {
 		try {
 			Tag tag=tagDao.findOne(id);
 			if(tag==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			tagDto=new TagDto(tag.getId(),tag.getName());
         }catch (Exception e){
-            System.err.println("Error : " +e.getMessage());
-			throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+			LOGGER.error("Error : " +e.getMessage());
+			throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
         } 
 		return tagDto; 
 	}
 
 	/*
-	 * Recupérer une valeur à partir d'un id
+	 * Recupï¿½rer une valeur ï¿½ partir d'un id
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public TagDto update(Long id, TagDto tagDto) {
@@ -61,19 +64,19 @@ public class TagService {
 		try {
 			Tag tag=tagDao.findOne(id);
 			if(tag==null) { 
-				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+id);
 			}
 			tag.setName(tagDto.getName()); 
 			tagDao.update(tag);
 			tagDto.setId(id);
         }catch (Exception e){
-            System.err.println("Error : " +e.getMessage());
+			LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException(""+e.getMessage());
         } 
 		return tagDto; 
 	}
 	/*
-	 * Supprimer une entité
+	 * Supprimer une entitï¿½
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public void deleteById(Long id) {

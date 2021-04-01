@@ -1,12 +1,12 @@
 
+>
+java:S1948"#Make "fiches" private or transient.(€Œ„ôþÿÿÿÿ
+O
+java:S1128	"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á
+S
+java:S1128"8Remove this unused import 'javax.persistence.ManyToOne'.(ÇÑ²Žøÿÿÿÿ
+M
+java:S1128"8Remove this unused import 'javax.persistence.OneToMany'.(«õù;
 S
 java:S1128
 "8Remove this unused import 'javax.persistence.JoinTable'.(ùö±µùÿÿÿÿ
-S
-java:S1128"8Remove this unused import 'javax.persistence.ManyToOne'.(ÇÑ²Žøÿÿÿÿ
-O
-java:S1128	"9Remove this unused import 'javax.persistence.JoinColumn'.(´Å¼á
-M
-java:S1128"8Remove this unused import 'javax.persistence.OneToMany'.(«õù;
->
-java:S1948"#Make "fiches" private or transient.(€Œ„ôþÿÿÿÿ

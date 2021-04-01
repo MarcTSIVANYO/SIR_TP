@@ -30,6 +30,20 @@ public class FicheDto {
 		this.owner = owner;
 		this.section = section;
 	}
+
+	public FicheDto(Long id, String libelle, String lieu, String url, Date dateButoire, String note,  User owner,
+					List<Tag> tags,Section section) {
+		super();
+		this.id=id;
+		this.libelle = libelle;
+		this.lieu = lieu;
+		this.url = url;
+		this.dateButoire = dateButoire;
+		this.note = note;
+		this.owner = owner;
+		this.section = section;
+		this.tags = tags;
+	}
 	
 	public Long getId() {
 		return id;

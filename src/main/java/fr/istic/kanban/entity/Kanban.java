@@ -1,6 +1,7 @@
 package fr.istic.kanban.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -14,10 +15,12 @@ import javax.persistence.*;
 })
 public class Kanban implements Serializable {
  
-	long id;
+	Long id;
 	String nom;
-	User admin; 
-	List<Section> sections;
+	User admin;
+
+	@ElementCollection(targetClass = Section.class)
+	List<Section> sections = new ArrayList<>();
 	
 	public Kanban(String nom, User admin) {
 		super();
@@ -28,12 +31,12 @@ public class Kanban implements Serializable {
 	public Kanban() { 
 	}
 
-	@Id
+	@Id 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public long getId() {
+	public Long getId() { 
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNom() {
@@ -52,13 +55,19 @@ public class Kanban implements Serializable {
 	public void setAdmin(User admin) {
 		this.admin = admin;
 	}
-	
-	@OneToMany(mappedBy = "kanban",cascade = CascadeType.PERSIST)
+
+	@OneToMany(mappedBy = "kanban", cascade = CascadeType.ALL, orphanRemoval = true)
 	public List<Section> getSections() {
 		return sections;
 	}
+
 	public void setSections(List<Section> sections) {
 		this.sections = sections;
+	}
+
+	public void add(Section section) {
+		this.sections.add(section);
+		section.setKanban(this);
 	}
 	@Override
 	public String toString() {
