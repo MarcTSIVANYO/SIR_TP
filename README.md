@@ -37,14 +37,14 @@ Ajouter le fichier de  configuration src/main/resources/META_INF/persistance.xml
     3. Executer TestJointFetch pour faire une requÃªte en chargement au plus tÃ´t (sans le problÃ¨me du n+1 select)
 ![Base de données](bdd.png)
 
-##### 2. Lancer le web service
+##### 3. Lancer le web service
   * **Exécuter le RestServer (fr.istic.kanban.run/RestServer) pour lancer le serveur**
     ![Junit test](web-run.png)
    
   * **Lien swagger pour tester l'api kanban, http://localhost:8080/api/#/ : [Swagger](http://localhost:8080/api/#/)**
     ![Junit test](swagger.png)
     
-#### 3. Données json pour tester l'api
+#### 4. Données json pour tester l'api
 * **Inserer dans la table user (One by one)**
 
  ```
@@ -86,7 +86,7 @@ Ajouter le fichier de  configuration src/main/resources/META_INF/persistance.xml
 }
 ```
 
-
+* **...**
 
 
 ## Technos 
