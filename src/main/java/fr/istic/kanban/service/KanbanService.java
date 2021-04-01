@@ -9,10 +9,13 @@ import fr.istic.kanban.dto.KanbanDto;
 import fr.istic.kanban.dto.SectionDto;
 import fr.istic.kanban.entity.Kanban;
 import fr.istic.kanban.entity.Section;
-import fr.istic.kanban.exceptions.CustomException; 
+import fr.istic.kanban.exceptions.CustomException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class KanbanService {
-	private final KanbanDao kanbanDao = new KanbanDao(); 
+	private final KanbanDao kanbanDao = new KanbanDao();
+	private static Logger LOGGER = LoggerFactory.getLogger(FicheService.class);
 	
 	/*
 	 * Enregistrer une entit�
@@ -26,7 +29,7 @@ public class KanbanService {
 	 * Recup�rer la liste de l'entit�
 	 */
 	public List<KanbanDto> findAll() { 
-
+		LOGGER.info("Recuperation des tableaux Kanban");
        // List<Kanban> kanbans=kanbanDao.findAll();
         List<Kanban> kanbans=kanbanDao.getAllKanban();
 		List<KanbanDto> kanbansDto = new ArrayList<>();
@@ -40,6 +43,8 @@ public class KanbanService {
 	 * NotFundException
 	 */
 	public KanbanDto getById(Long id) {
+		LOGGER.info("Recuperation du tableau Kanban avec ID = " +id);
+
 		CustomException.isValid(id); 
 		KanbanDto kanbanDto; 
 		try {
@@ -49,7 +54,7 @@ public class KanbanService {
 			}
 			kanbanDto=new KanbanDto(kanban);
         }catch (Exception e){
-            System.err.println("Error : " +e.getMessage());
+            LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException("Aucun resultat pour l'�lement avec l'identifiant "+id);
         } 
 		return kanbanDto; 
@@ -60,6 +65,7 @@ public class KanbanService {
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public KanbanDto update(Long id, KanbanDto kanbanDto) {
+		LOGGER.info("Update du avec Teableau Kanban dont l'ID = "+id);
 		CustomException.isValid(id);  
 		try {
 			Kanban kanban=kanbanDao.findOne(id);
@@ -71,7 +77,7 @@ public class KanbanService {
 			kanbanDao.update(kanban);
 			kanbanDto.setId(id);
         }catch (Exception e){
-            System.err.println("Error : " +e.getMessage());
+			LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException(""+e.getMessage());
         } 
 		return kanbanDto; 
@@ -82,6 +88,7 @@ public class KanbanService {
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public void deleteById(Long id) {
+		LOGGER.info("Suppression du tableau kanban avec l'ID = "+id);
 		CustomException.isValid(id);  
 		kanbanDao.deleteById(id);
 	}
@@ -104,7 +111,7 @@ public class KanbanService {
 			}
 			return sectionsDto;  
         }catch (Exception e){
-            System.err.println("Error : " +e.getMessage());
+            LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException(""+e.getMessage());
         } 
 		

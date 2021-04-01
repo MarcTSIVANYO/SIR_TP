@@ -2,6 +2,7 @@ package fr.istic.kanban.entity;
  
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @SuppressWarnings("JpaQlInspection")
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "touteslesfiches", query = "select f from Fiche as f")
+		@NamedQuery(name = "touteslesfiches", query = "select f from Fiche as f join fetch f.tags")
 })
 public class Fiche  implements Serializable  {
 	Long id;
@@ -20,8 +21,9 @@ public class Fiche  implements Serializable  {
 	String note;	
 	int dureeminute;
 	User owner;  
-	Section section; 
-	List<Tag> tags;
+	Section section;
+	@ElementCollection(targetClass = Tag.class)
+	List<Tag> tags = new ArrayList<>();
 	 
 	public Fiche(String libelle, String lieu, String url, Date dateButoire, String note, User owner,
 			Section section, List<Tag> tags) {
@@ -34,6 +36,10 @@ public class Fiche  implements Serializable  {
 		this.owner = owner;
 		this.section = section;
 		this.tags = tags;
+	}
+
+	public Fiche(String libelle){
+		this.libelle = libelle;
 	}
 	
 	public Fiche() { 
@@ -84,7 +90,7 @@ public class Fiche  implements Serializable  {
 	public void setDureeminute(int dureeminute) {
 		this.dureeminute = dureeminute;
 	}
-	@ManyToOne
+
 	public User getOwner() {
 		return owner;
 	}
@@ -99,6 +105,11 @@ public class Fiche  implements Serializable  {
 	}
 	public void setSection(Section section) {
 		this.section = section;
+	}
+
+	public void addTag(Tag tag){
+		this.tags.add(tag);
+
 	}
 	
 	@ManyToMany

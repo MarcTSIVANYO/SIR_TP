@@ -1,22 +1,17 @@
 package fr.istic.kanban.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class Tag  implements Serializable { 
 	Long id;
 	String name;
-	List<Fiche> fiches;
+	@ElementCollection(targetClass = Fiche.class)
+	List<Fiche> fiches = new ArrayList<>();
 	
 	public Tag( String name, List<Fiche> fiches) {
 		super(); 
@@ -52,6 +47,11 @@ public class Tag  implements Serializable {
 	}
 	public void setFiche(List<Fiche> fiches) {
 		this.fiches = fiches;
+	}
+
+	public void addFiche(Fiche fiche){
+		this.fiches.add(fiche);
+		fiche.addTag(this);
 	}
 	@Override
 	public String toString() {

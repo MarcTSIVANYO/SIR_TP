@@ -6,11 +6,15 @@ import javax.ws.rs.NotFoundException;
 import fr.istic.kanban.dao.FicheDao;
 import fr.istic.kanban.dto.FicheDto;
 import fr.istic.kanban.entity.Fiche;
-import fr.istic.kanban.exceptions.CustomException; 
+import fr.istic.kanban.entity.Section;
+import fr.istic.kanban.exceptions.CustomException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FicheService {
 	
-	private final FicheDao ficheDao = new FicheDao(); 
+	private final FicheDao ficheDao = new FicheDao();
+	private static Logger LOGGER = LoggerFactory.getLogger(FicheService.class);
 	
 	/*
 	 * Enregistrer une entit�
@@ -24,9 +28,9 @@ public class FicheService {
 	 * Recup�rer la liste de l'entit�
 	 */
 	public List<FicheDto> findAll() { 
-        List<Fiche> fiches=ficheDao.findAll(); 
+        List<Fiche> fiches=ficheDao.getAllFiches();
 		List<FicheDto> fichesDto = new ArrayList<>(); 
-		fiches.forEach(fiche-> fichesDto.add(new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), fiche.getOwner(),fiche.getSection())) );
+		fiches.forEach(fiche-> fichesDto.add(new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), fiche.getOwner(),null,null)) );
 		return fichesDto; 
     }	 
 
@@ -35,6 +39,7 @@ public class FicheService {
 	 * NotFundException
 	 */
 	public FicheDto getById(Long id) {
+		LOGGER.info("Recuperation d'une fiche par son ID "+id);
 		CustomException.isValid(id); 
 		FicheDto ficheDto; 
 		try {
@@ -44,7 +49,7 @@ public class FicheService {
 			}
 			ficheDto=new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), fiche.getOwner(),fiche.getSection());
 	    }catch (Exception e){
-	        System.err.println("Error : " +e.getMessage());
+			LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException("Aucun resultat pour l'�lement avec l'identifiant "+id);
 	    } 
 		return ficheDto; 
@@ -55,6 +60,7 @@ public class FicheService {
 	 * NotFundException if id is'nt valid or not found 
 	 */
 	public FicheDto update(Long id, FicheDto ficheDto) {
+		LOGGER.info("Update de la fiche avec l'ID" +id);
 		CustomException.isValid(id);  
 		try {
 			Fiche fiche=ficheDao.findOne(id);
@@ -72,7 +78,7 @@ public class FicheService {
 			fiche.setTags(ficheDto.getTags());
 			ficheDto.setId(id);
         }catch (Exception e){
-            System.err.println("Error : " +e.getMessage());
+			LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException(""+e.getMessage());
         } 
 		return ficheDto; 

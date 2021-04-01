@@ -18,9 +18,7 @@ import fr.istic.kanban.entity.User;
 
 public class JpaTest2 {
 
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 
 		UserDao userDao=new UserDao();
@@ -46,7 +44,7 @@ public class JpaTest2 {
 			sectionTwo.setPosition(10); 
 
 			Section sectionTree =new Section(); 
-			sectionTree.setLibelle("Réalisé");
+			sectionTree.setLibelle("Rï¿½alisï¿½");
 			sectionTree.setPosition(8); 
 
 			sectionDao.save(sectionOne);
