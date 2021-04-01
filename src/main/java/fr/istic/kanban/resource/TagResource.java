@@ -1,55 +1,56 @@
-package fr.istic.kanban.res;
+package fr.istic.kanban.resource;
 import java.util.List;
+
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import javax.ws.rs.core.MediaType; 
-import fr.istic.kanban.dto.FicheDto;
-import fr.istic.kanban.service.FicheService;
+import javax.ws.rs.core.MediaType;
 
-@Path("/api/fiches")
-public class FicheResource {
+import fr.istic.kanban.dto.TagDto;
+import fr.istic.kanban.service.TagService; 
 
-	FicheService ficheService = new FicheService(); 
+@Path("/api/tag")
+public class TagResource { 
+	TagService tagService = new TagService(); 
 	@GET
 	@Path("/")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
-	public List<FicheDto> getAll(){ 
-		return ficheService.findAll(); 
+	public List<TagDto> getAll(){ 
+		return tagService.findAll(); 
 	}
 	
 	@GET
 	@Path("/{id}")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
-	public FicheDto getById(@PathParam("id") Long id){ 
-		return ficheService.getById(id); 
+	public TagDto getById(@PathParam("id") Long id){ 
+		return tagService.getById(id); 
 	}
 	
 	@POST 
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
 	@javax.ws.rs.Consumes( MediaType.APPLICATION_JSON)
-	public FicheDto save(FicheDto ficheDto){ 
-		 ficheService.save(ficheDto);
-		 return ficheDto;
+	public TagDto save(TagDto tagDto){ 
+		 tagService.save(tagDto);
+		 return tagDto;
 	}
 	
 	@PUT 
 	@Path("/{id}")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
 	@javax.ws.rs.Consumes( MediaType.APPLICATION_JSON)
-	public FicheDto update(FicheDto ficheDto,@PathParam("id") Long id){  
-		 return  ficheService.update(id,ficheDto);
+	public TagDto update(TagDto tagDto,@PathParam("id") Long id){  
+		 return  tagService.update(id,tagDto);
 	}
 	 
 	@DELETE
 	@Path("/{id}")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
 	public void deleteById(@PathParam("id") Long id){ 
-		  ficheService.deleteById(id);; 
-	} 
+		  tagService.deleteById(id);; 
+	}
+ 
 }
-
 

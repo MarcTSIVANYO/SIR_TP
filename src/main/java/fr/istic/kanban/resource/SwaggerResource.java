@@ -1,4 +1,4 @@
-package fr.istic.kanban.res;
+package fr.istic.kanban.resource;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

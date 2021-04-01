@@ -1,4 +1,4 @@
-package fr.istic.kanban.res; 
+package fr.istic.kanban.resource;
 import java.util.List;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -6,48 +6,50 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import javax.ws.rs.core.MediaType;
-import fr.istic.kanban.dto.SectionDto; 
-import fr.istic.kanban.service.SectionService; 
+import javax.ws.rs.core.MediaType; 
+import fr.istic.kanban.dto.FicheDto;
+import fr.istic.kanban.service.FicheService;
 
-@Path("/api/section")
-public class SectionResource { 
-	SectionService sectionService = new SectionService(); 
+@Path("/api/fiches")
+public class FicheResource {
+
+	FicheService ficheService = new FicheService(); 
 	@GET
 	@Path("/")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
-	public List<SectionDto> getAll(){ 
-		return sectionService.findAll(); 
+	public List<FicheDto> getAll(){ 
+		return ficheService.findAll(); 
 	}
 	
 	@GET
 	@Path("/{id}")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
-	public SectionDto getById(@PathParam("id") Long id){ 
-		return sectionService.getById(id); 
+	public FicheDto getById(@PathParam("id") Long id){ 
+		return ficheService.getById(id); 
 	}
 	
 	@POST 
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
 	@javax.ws.rs.Consumes( MediaType.APPLICATION_JSON)
-	public SectionDto save(SectionDto sectionDto){ 
-		 sectionService.save(sectionDto);
-		 return sectionDto;
+	public FicheDto save(FicheDto ficheDto){ 
+		 ficheService.save(ficheDto);
+		 return ficheDto;
 	}
 	
 	@PUT 
 	@Path("/{id}")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
 	@javax.ws.rs.Consumes( MediaType.APPLICATION_JSON)
-	public SectionDto update(SectionDto sectionDto,@PathParam("id") Long id){  
-		 return  sectionService.update(id,sectionDto);
+	public FicheDto update(FicheDto ficheDto,@PathParam("id") Long id){  
+		 return  ficheService.update(id,ficheDto);
 	}
 	 
 	@DELETE
 	@Path("/{id}")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
 	public void deleteById(@PathParam("id") Long id){ 
-		  sectionService.deleteById(id);; 
-	}
- 
+		  ficheService.deleteById(id);; 
+	} 
 }
+
+

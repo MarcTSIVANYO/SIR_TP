@@ -22,21 +22,21 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import fr.istic.kanban.res.KanbanResource;
-import fr.istic.kanban.res.TagResource;
-import fr.istic.kanban.res.UserResource; 
+import fr.istic.kanban.resource.FicheResource;
+import fr.istic.kanban.resource.KanbanResource;
+import fr.istic.kanban.resource.SectionResource;
+import fr.istic.kanban.resource.SwaggerResource;
+import fr.istic.kanban.resource.TagResource;
+import fr.istic.kanban.resource.UserResource;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
-import jpa.JpaCreateDB;
-import fr.istic.kanban.res.SectionResource;
-import fr.istic.kanban.res.SwaggerResource;
-import fr.istic.kanban.res.FicheResource; 
+import jpa.JpaCreateDB; 
 @ApplicationPath("/")
 public class TestApplication extends Application {
 	     @Override
     public Set<Class<?>> getClasses() {
 
         final Set<Class<?>> resources = new HashSet<Class<?>>();
-        JpaCreateDB.run();
+        JpaCreateDB.run(); // Pour créer la base de données
         resources.add(KanbanResource.class);
         resources.add(TagResource.class);
         resources.add(UserResource.class);

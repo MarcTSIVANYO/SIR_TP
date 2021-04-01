@@ -1,4 +1,4 @@
-package fr.istic.kanban.res;
+package fr.istic.kanban.resource;
 import java.util.List;
 
 import javax.ws.rs.DELETE;

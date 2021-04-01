@@ -19,7 +19,7 @@ public class UserService {
 	 * Enregistrer une entitï¿½
 	 */
 	public void save(UserDto userDto) { 
-        User user=new User(userDto.getEmail(),userDto.getName());
+        User user=new User(userDto.getEmail(),userDto.getName(),userDto.getPassword());
         userDao.save(user);
     }	
 	
@@ -29,7 +29,7 @@ public class UserService {
 	public List<UserDto> findAll() { 
         List<User> users=userDao.findAll(); 
 		List<UserDto> usersDto = new ArrayList<>();  
-		users.forEach(user-> usersDto.add(new UserDto(user.getEmail(),user.getName())) ); 
+		users.forEach(user-> usersDto.add(new UserDto(user.getEmail(),user.getName(),user.getPassword())) ); 
 		return usersDto; 
     }	 
 
@@ -45,7 +45,7 @@ public class UserService {
 			if(user==null) { 
 				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
 			}
-			userDto=new UserDto(user.getEmail(),user.getName());
+			userDto=new UserDto(user.getEmail(),user.getName(),user.getPassword());
         }catch (Exception e){
             System.err.println("Error : " +e.getMessage());
 			throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
@@ -70,7 +70,7 @@ public class UserService {
 			if(user==null) { 
 				throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+email);
 			}
-			userDto=new UserDto(user.getEmail(),user.getName());
+			userDto=new UserDto(user.getEmail(),user.getName(),user.getPassword());
         }catch (Exception e){
 			LOGGER.error("Error : " +e.getMessage());
 			throw new NotFoundException("Aucun resultat pour l'ï¿½lement avec l'identifiant "+email);
@@ -97,6 +97,7 @@ public class UserService {
 			
 			user.setEmail(userDto.getEmail() );
 			user.setName(userDto.getName()); 
+			user.setName(userDto.getPassword()); 
 			userDao.update(user); 
         }catch (Exception e){
 			LOGGER.error("Error : " +e.getMessage());

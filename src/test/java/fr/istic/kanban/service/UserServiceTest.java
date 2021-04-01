@@ -38,16 +38,18 @@ public class UserServiceTest {
        User userOne=new User();
 		userOne.setEmail("marctsivanyo@gmail.com");
 		userOne.setName("Marc TSIVANYO");
+		userOne.setPassword("pass-all");
 		
 		User userTwo=new User();
 		userTwo.setEmail("laurentduppont@gmail.com");
-		userTwo.setName("Laurant Duppont");  
+		userTwo.setName("Laurant Duppont"); 
+		userTwo.setPassword("pass-all"); 
         
        list.add(userOne);
        list.add(userTwo); 
         
-       UserDto userOneDto=new UserDto(userOne.getEmail(),userOne.getName());
-       UserDto userTwoDto=new UserDto(userTwo.getEmail(),userTwo.getName());
+       UserDto userOneDto=new UserDto(userOne.getEmail(),userOne.getName(),user.getPassword());
+       UserDto userTwoDto=new UserDto(userTwo.getEmail(),userTwo.getName(),user.getPassword());
        listDto.add(userOneDto);
        listDto.add(userTwoDto);
        
@@ -68,7 +70,8 @@ public class UserServiceTest {
        User user=new User();
 		user.setEmail("marctsivanyo@gmail.com");
 		user.setName("Marc TSIVANYO");
-       UserDto userDto=new UserDto(user.getEmail(),user.getName()); 
+		user.setPassword("pass-all");
+       UserDto userDto=new UserDto(user.getEmail(),user.getName(),user.getPassword()); 
       
        when(userService.getByEmail(user.getEmail())).thenReturn(userDto);
         
@@ -83,7 +86,8 @@ public class UserServiceTest {
        User user=new User();
 		user.setEmail("marctsivanyo@gmail.com");
 		user.setName("Marc TSIVANYO");
-       UserDto userDto=new UserDto(user.getEmail(),user.getName()); 
+		user.setPassword("pass-all");
+       UserDto userDto=new UserDto(user.getEmail(),user.getName(),user.getPassword()); 
        
        userService.save(userDto); 
        verify(userService, times(1)).save(userDto);
@@ -95,8 +99,9 @@ public class UserServiceTest {
        User user=new User();
 		user.setEmail("marctsivanyo@gmail.com");
 		user.setName("Marc TSIVANYO");
+		user.setPassword("pass-all");
          
-       UserDto userDto=new UserDto(user.getEmail(),user.getName()); 
+       UserDto userDto=new UserDto(user.getEmail(),user.getName(),user.getPassword()); 
       
         when(userService.getByEmail(userDto.getEmail())).thenReturn(userDto).thenReturn(null);
        //test
@@ -109,7 +114,7 @@ public class UserServiceTest {
      public void testUpdateTraitementAction() 
      {
  
-         UserDto userDto=new UserDto(user.getEmail(),user.getName());  
+         UserDto userDto=new UserDto(user.getEmail(),user.getName(),user.getPassword());  
                  
          String emailTwo="laurentduppont@gmail.com";
         when(userService.getByEmail(user.getEmail())).thenReturn(userDto); 
