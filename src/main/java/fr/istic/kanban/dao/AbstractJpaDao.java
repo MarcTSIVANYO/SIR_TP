@@ -19,11 +19,9 @@ public abstract class AbstractJpaDao<K, T extends Serializable> implements IGene
 		this.entityManager = EntityManagerHelper.getEntityManager();
 		this.clazz = clazzToSet;
 	}
- 
 	public T findOne(K id) {
 		return entityManager.find(clazz, id);
 	}
-
 	public List<T> findAll() {
 		return entityManager.createQuery("select e from " + clazz.getName() + " as e",clazz).getResultList();
 	}

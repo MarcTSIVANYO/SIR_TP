@@ -40,7 +40,7 @@ public class Fiche  implements Serializable  {
 	}
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public long getId() {
 		return id;
 	}
@@ -115,6 +115,5 @@ public class Fiche  implements Serializable  {
 	public String toString() {
 		return "Fiche [id=" + id + ", libelle=" + libelle + ", lieu=" + lieu + ", url=" + url + ", dateButoire="
 				+ dateButoire + ", note=" + note + ", dureeminute=" + dureeminute + ", owner=" + owner + "]";
-	}
-	  
+	} 
 }

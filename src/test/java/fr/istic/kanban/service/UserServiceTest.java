@@ -70,10 +70,10 @@ public class UserServiceTest {
 		user.setName("Marc TSIVANYO");
        UserDto userDto=new UserDto(user.getEmail(),user.getName()); 
       
-       when(userService.getById(user.getEmail())).thenReturn(userDto);
+       when(userService.getByEmail(user.getEmail())).thenReturn(userDto);
         
        //test
-       UserDto userDtoResult = userService.getById(user.getEmail()); 
+       UserDto userDtoResult = userService.getByEmail(user.getEmail()); 
        assertEquals(user.getName(), userDtoResult.getName()); 
    }
 	
@@ -98,7 +98,7 @@ public class UserServiceTest {
          
        UserDto userDto=new UserDto(user.getEmail(),user.getName()); 
       
-        when(userService.getById(userDto.getEmail())).thenReturn(userDto).thenReturn(null);
+        when(userService.getByEmail(userDto.getEmail())).thenReturn(userDto).thenReturn(null);
        //test
        userService.deleteById(userDto.getEmail()); 
        verify(userService, times(1)).deleteById(userDto.getEmail());
@@ -110,10 +110,9 @@ public class UserServiceTest {
      {
  
          UserDto userDto=new UserDto(user.getEmail(),user.getName());  
-         
-         
+                 
          String emailTwo="laurentduppont@gmail.com";
-        when(userService.getById(user.getEmail())).thenReturn(userDto); 
+        when(userService.getByEmail(user.getEmail())).thenReturn(userDto); 
         final UserDto userDtoResult = userService.update(emailTwo, userDto);
         verify(userService, times(1)).update(emailTwo, userDto); 
      }

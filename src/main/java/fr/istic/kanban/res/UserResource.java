@@ -26,7 +26,7 @@ public class UserResource {
 	@Path("/{email}")
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
 	public UserDto getById(@PathParam("email") String email){ 
-		return userService.getById(email); 
+		return userService.getByEmail(email); 
 	}
 	
 	@POST 

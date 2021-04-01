@@ -26,6 +26,7 @@ import fr.istic.kanban.res.KanbanResource;
 import fr.istic.kanban.res.TagResource;
 import fr.istic.kanban.res.UserResource; 
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
+import jpa.JpaCreateDB;
 import fr.istic.kanban.res.SectionResource;
 import fr.istic.kanban.res.SwaggerResource;
 import fr.istic.kanban.res.FicheResource; 
@@ -35,7 +36,7 @@ public class TestApplication extends Application {
     public Set<Class<?>> getClasses() {
 
         final Set<Class<?>> resources = new HashSet<Class<?>>();
-
+        JpaCreateDB.run();
         resources.add(KanbanResource.class);
         resources.add(TagResource.class);
         resources.add(UserResource.class);

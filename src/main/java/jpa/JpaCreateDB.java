@@ -2,57 +2,52 @@ package jpa;
  
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import fr.istic.kanban.entity.*;
-
-public class JpaTest {
-
-	private EntityManager manager;
-
-	public JpaTest(EntityManager manager) {
-		this.manager = manager;
-	}
+import fr.istic.kanban.entity.EnAttente;
+import fr.istic.kanban.entity.Fiche;
+import fr.istic.kanban.entity.Kanban;
+import fr.istic.kanban.entity.Section;
+import fr.istic.kanban.entity.Tag;
+import fr.istic.kanban.entity.User;
+ 
+public class JpaCreateDB {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		EntityManagerFactory factory =   
- 			 Persistence.createEntityManagerFactory("mysql");
-		EntityManager manager = factory.createEntityManager();
-		JpaTest test = new JpaTest(manager);
+	
 
-		EntityTransaction tx = manager.getTransaction();
-		tx.begin();
+	private final static  EntityManagerFactory factory =   
+ 			 Persistence.createEntityManagerFactory("mysql");
+	private final static EntityManager manager = factory.createEntityManager();
+	private final static EntityTransaction tx = manager.getTransaction();
+	
+	public static void run() {
+
+		tx.begin(); 
 		try {
-			test.createKanbans();
+			createKanbans();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		tx.commit();
-
-		test.listEmployees();
-			
-   	 manager.close();
-		System.out.println(".. done");
-	}
+ 
+		//manager.close();
+		//EntityManagerHelper.closeEntityManagerFactory();
+		//		factory.close();
+	} 
 	
 	
-	private void createKanbans() {
+	private static void createKanbans() {
 		int numOfKanbans = manager.createQuery("Select a From Section a", Section.class).getResultList().size();
-		
-		//User user = (User) manager.createQuery("Select u from User u where u.email='marctsivanyo@gmail.com'", User.class).getResultList();
-		
-		
-		
 		User user =new User();
 		user.setEmail("marctsivanyo@gmail.com");
 		user.setName("Marc TSIVANYO");  
+		user.setPassword("145-Kanban");  
 		manager.persist(user);
 
 		Tag coffee=new Tag("Coffee",null);
@@ -78,25 +73,8 @@ public class JpaTest {
 			EnAttente sectionAttente = new EnAttente();
 			sectionAttente.setLibelle("En attente");
 			sectionAttente.setPosition(1);
-			sectionAttente.setKanban(kan);
-		//sectionAttente.setFiches(new ArrayList<>());
-
-		manager.persist(sectionAttente);
-
-			/*Section sectionTwo =new Section();
-			sectionTwo.setLibelle("En cours");
-			sectionTwo.setPosition(2); 
-			sectionTwo.setKanban(kan);
-
-			Section sectionTree =new Section(); 
-			sectionTree.setLibelle("R�alis�");
-			sectionTree.setPosition(3); 
-			sectionTwo.setKanban(kan2);  
-			
-			manager.persist(sectionAttente);
-			manager.persist(sectionTwo);
-			manager.persist(sectionTree);*/
-			 
+			sectionAttente.setKanban(kan); 
+		manager.persist(sectionAttente); 
 			ArrayList<Tag> tags = new ArrayList() {{
 				 add(coffee);
 				 add(tea); 
@@ -114,24 +92,6 @@ public class JpaTest {
 				fiche.setDateButoire(new java.sql.Date(Calendar.getInstance().getTimeInMillis()));
 				fiche.setTags(tags);//Here the problem?
 				
-
-				manager.persist(fiche);
-				
-				/*Fiche thisFiche = manager.find( Fiche.class, 1L	 );            
-	            System.out.println( "Tags associ�s � une fiche" );
-	            for( Tag associatedTag : thisFiche.getTags() ) {
-	                System.out.println( associatedTag );
-	            }*/
- 
-	}
-
-	private void listEmployees() {
-		List<Kanban> resultList = manager.createQuery("Select a From Kanban a", Kanban.class).getResultList();
-		System.out.println("num of Kanbans:" + resultList.size());
-		for (Kanban next : resultList) {
-			System.out.println("next kanban: " + next);
-		}
+				manager.persist(fiche); 
 	}
 }
-
- 

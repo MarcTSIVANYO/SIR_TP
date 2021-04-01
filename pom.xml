@@ -95,6 +95,7 @@
 			<version>42.2.4</version>
 		</dependency>
 		<!-- swagger dependency -->
+		
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
 			<artifactId>swagger-jaxrs2</artifactId>
@@ -112,6 +113,11 @@
 			<version>5.3.2</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+	    <version>0.3m</version>
+        </dependency>
 	</dependencies>
 
 </project>

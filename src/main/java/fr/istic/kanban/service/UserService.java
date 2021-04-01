@@ -34,7 +34,28 @@ public class UserService {
 	 * Recupérer une valeur à partir d'un id
 	 * NotFundException
 	 */
-	public UserDto getById(String email) {
+	public UserDto getById(Long id ) {
+		CustomException.isValid(id); 
+		UserDto userDto; 
+		try {
+			User user=userDao.findOne(id);
+			if(user==null) { 
+				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+			}
+			userDto=new UserDto(user.getEmail(),user.getName());
+        }catch (Exception e){
+            System.err.println("Error : " +e.getMessage());
+			throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+id);
+        } 
+		return userDto; 
+	}
+	
+	
+	/*
+	 * Recupérer une valeur à partir d'un id
+	 * NotFundException
+	 */
+	public UserDto getByEmail(String email) {
 		CustomException.isValidString(email);
 		if(!CustomException.isValidEmail(email)) { 
             System.err.println("Error : Le format email "+email+" est incorrect");
@@ -42,7 +63,7 @@ public class UserService {
 		}
 		UserDto userDto; 
 		try {
-			User user=userDao.findOne(email);
+			User user=userDao.findByEmail(email);
 			if(user==null) { 
 				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+email);
 			}
@@ -53,7 +74,6 @@ public class UserService {
         } 
 		return userDto; 
 	}
-
 	/*
 	 * Recupérer une valeur à partir d'un id
 	 * NotFundException if id is'nt valid or not found 
@@ -67,7 +87,7 @@ public class UserService {
 			throw new NotFoundException("Le format email "+userDto.getEmail()+" est incorrect");
 		}
 		try {
-			User user=userDao.findOne(email);
+			User user=userDao.findByEmail(email);
 			if(user==null) { 
 				throw new NotFoundException("Aucun resultat pour l'élement avec l'identifiant "+email);
 			}
@@ -90,6 +110,7 @@ public class UserService {
 		if(!CustomException.isValidEmail(email)) { 
 			throw new NotFoundException("Le format email "+email+" est incorrect");
 		}  
-		userDao.deleteById(email);
+		User user=userDao.findByEmail(email);
+		userDao.deleteById(user.getId());
 	} 
 }

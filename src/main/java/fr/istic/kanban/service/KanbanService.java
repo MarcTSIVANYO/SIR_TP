@@ -25,17 +25,11 @@ public class KanbanService {
 	/*
 	 * Recup�rer la liste de l'entit�
 	 */
-	public List<KanbanDto> findAll() { 
-<<<<<<< HEAD
-        List<Kanban> kanbans=kanbanDao.findAll(); 
-		List<KanbanDto> kanbansDto = new ArrayList<>(); 
-		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban)) );
-=======
-       // List<Kanban> kanbans=kanbanDao.findAll();
+	public List<KanbanDto> findAll() {   
         List<Kanban> kanbans=kanbanDao.getAllKanban();
 		List<KanbanDto> kanbansDto = new ArrayList<>();
-		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban.getId(),kanban.getNom(),kanban.getAdmin())) );
->>>>>>> kanban-heritage-namedQueries
+		kanbans.forEach(kanban-> kanbansDto.add(new KanbanDto(kanban)));
+
 		return kanbansDto; 
     }	 
 
