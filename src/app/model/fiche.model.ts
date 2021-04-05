@@ -1,8 +1,8 @@
-import {UserModel} from './user.model';
-import {TagModel} from './tag.model';
-import {SectionModel} from './section.model';
+import {Tag} from 'primeng/tag';
+import {User} from './user.model';
+import {Section} from './section.model';
 
-export interface FicheModel {
+export interface Fiche {
   id: number;
   libelle: string;
   lieu: string;
@@ -10,7 +10,7 @@ export interface FicheModel {
   dateButoire: number;
   note: string;
   dureeminite: number;
-  owner: UserModel;
-  section?: SectionModel;
-  tags?: TagModel[];
+  owner: User;
+  section?: Section;
+  tags?: Tag[];
 }
