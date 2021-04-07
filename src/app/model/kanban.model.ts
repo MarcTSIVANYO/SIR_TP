@@ -1,9 +1,10 @@
-import {UserModel} from './user.model';
-import {SectionModel} from './section.model';
+import {User} from './user.model';
+import {Section} from './section.model';
 
-export interface KanbanModel {
+
+export interface Kanban {
   id: number;
   nom: string;
-  admin: UserModel;
-  sections?: SectionModel[];
+  admin: User;
+  sections?: Section[];
 }

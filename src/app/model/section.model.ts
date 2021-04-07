@@ -1,10 +1,11 @@
-import {KanbanModel} from './kanban.model';
-import {FicheModel} from './fiche.model';
+import {Kanban} from './kanban.model';
+import {Fiche} from './fiche.model';
 
-export interface SectionModel {
+
+export interface Section {
   id: number;
   libelle: string;
   position: number;
-  kanban: KanbanModel;
-  fiches?: FicheModel[];
+  kanban: Kanban;
+  fiches?: Fiche[];
 }
