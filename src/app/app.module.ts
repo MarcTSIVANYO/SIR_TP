@@ -11,6 +11,15 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
 import {PasswordModule} from 'primeng/password';
+import {KanbanService} from './service/kanban.service';
+import {FicheService} from './service/fiche.service';
+import {SectionService} from './service/section.service';
+import {TagService} from './service/tag.service';
+import {UserService} from './service/user.service';
+import {CardModule} from 'primeng/card';
+import { FicheComponent } from './component/fiche/fiche.component';
+import {CommonModule} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,17 +27,27 @@ import {PasswordModule} from 'primeng/password';
     MenuComponent,
     FooterComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    FicheComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MenubarModule,
     InputTextModule,
     ButtonModule,
     AppRoutingModule,
-    PasswordModule
+    PasswordModule,
+    CardModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [
+    KanbanService,
+    FicheService,
+    SectionService,
+    TagService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

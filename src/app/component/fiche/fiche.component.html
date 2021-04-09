@@ -1,0 +1,15 @@
+<br>
+<p-card title="Fiche One" [header]="ficheId +' '+ ficheLibelle" [style]="{width: '360px', background: '#e6ebf1'}" styleClass="ui-card-shadow" >
+  <p-header>
+    <!--<img src="../../../assets/img/usercard.png">-->
+  </p-header>
+    <div style="display: flex;">
+      <div> Date : {{ ficheDate | date : 'shortDate'}} </div>
+      <div style="margin-left: auto;margin-right: 0;"> Duree : {{ ficheDuree }} </div>
+    </div>
+  <div style="margin-top: 2%"> Proprietaire : {{ ficheOwner.name }}</div>
+  <div style="margin-top: 2%"><a href="https://teams.microsoft.com/_#/school/conversations/G%C3%A9n%C3%A9ral?threadId=19:3733cf5795d445b7855cafdbc1a29dfd@thread.tacv2&ctx=channel">Url_{{ficheLibelle}}</a></div>
+  <p-footer>
+    <!-- ICI AFFICHER LES TAGS -->
+  </p-footer>
+</p-card>
