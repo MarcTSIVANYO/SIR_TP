@@ -1,6 +1,6 @@
-import {Tag} from 'primeng/tag';
 import {User} from './user.model';
 import {Section} from './section.model';
+import { Tag } from './tag.model';
 
 export interface Fiche {
   id: number;
