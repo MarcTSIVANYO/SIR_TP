@@ -14,6 +14,8 @@ import {UserService} from './service/user.service';
 import { FicheComponent } from './component/fiche/fiche.component';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ListUserComponent } from './component/users/list-user/list-user.component';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FooterComponent,
     HeaderComponent,
     LoginComponent,
-    FicheComponent
+    FicheComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     KanbanService,
