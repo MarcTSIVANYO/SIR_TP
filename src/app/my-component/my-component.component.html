@@ -1,0 +1,26 @@
+<input [(ngModel)]="id">
+<input readonly [(ngModel)]="id">
+
+<br>
+<p>Mon id : {{id}}</p>
+
+<br>
+<p>Mon Pokemon selectionne  {{selectedPokId}}</p>
+
+<br>
+<input [(ngModel)]="searchPokeName">
+<br>
+
+<select [(ngModel)]="selectedPokId">
+  <option [value]="pok.id"
+          *ngFor="let pok of pokes | filterPokemonPipe:'name': searchPokeName">{{pok.name}}</option>
+</select>
+<button (click)="onGo()"> GO </button>
+<br>
+<div *ngIf="pokeDetail">
+  <app-pokedetail [detail]="pokeDetail"></app-pokedetail>
+</div>
+
+<br>
+<p-calendar [(ngModel)]="myDate"></p-calendar>
+
