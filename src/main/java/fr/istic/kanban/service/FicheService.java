@@ -46,7 +46,7 @@ public class FicheService {
 		List<FicheDto> fichesDto = new ArrayList<>();
 		for (Fiche fiche : fiches) {
 			FicheDto ficheDto=new FicheDto(fiche.getId(), fiche.getLibelle(), fiche.getLieu(), fiche.getUrl(),
-					fiche.getDateButoire(), fiche.getUrl(), fiche.getSection().getId(),
+					fiche.getDateButoire(), fiche.getNote(), fiche.getSection().getId(),
 					new UserDto(fiche.getOwner().getEmail(), fiche.getOwner().getName()));
 			List<TagDto> tagsDto = new ArrayList<>();
 			fiche.getTags().forEach(tag -> tagsDto.add(new TagDto(tag.getId(), tag.getName())));
@@ -69,7 +69,7 @@ public class FicheService {
 				throw new NotFoundException("Aucun resultat pour l'�lement avec l'identifiant " + id);
 			}
 			ficheDto = new FicheDto(fiche.getId(), fiche.getLibelle(), fiche.getLieu(), fiche.getUrl(),
-					fiche.getDateButoire(), fiche.getUrl(), fiche.getSection().getId(), new UserDto(fiche.getOwner().getEmail(), fiche.getOwner().getName()));
+					fiche.getDateButoire(), fiche.getNote(), fiche.getSection().getId(), new UserDto(fiche.getOwner().getEmail(), fiche.getOwner().getName()));
 
 			List<TagDto> tagsDto = new ArrayList<>();
 			fiche.getTags().forEach(tag -> tagsDto.add(new TagDto(tag.getId(), tag.getName())));

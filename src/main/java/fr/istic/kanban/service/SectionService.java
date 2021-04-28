@@ -66,7 +66,7 @@ public class SectionService {
 			List<Fiche> fiches = section.getFiches(); 
 			for(Fiche fiche : fiches) {
 				FicheDto ficheDto=new FicheDto(fiche.getId(), fiche.getLibelle(), fiche.getLieu(), fiche.getUrl(),
-						fiche.getDateButoire(), fiche.getUrl(), fiche.getSection().getId(),
+						fiche.getDateButoire(), fiche.getNote(), fiche.getSection().getId(),
 						new UserDto(fiche.getOwner().getEmail(), fiche.getOwner().getName()));
 				
 				
