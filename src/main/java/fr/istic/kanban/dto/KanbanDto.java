@@ -9,8 +9,8 @@ public class KanbanDto {
 
 	Long id;
 	String nom;
-	User admin;   
-	public KanbanDto(Long id, String nom, User admin) {
+	UserDto admin;   
+	public KanbanDto(Long id, String nom, UserDto admin) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -23,7 +23,7 @@ public class KanbanDto {
 		super();
 		this.id = kanban.getId();
 		this.nom = kanban.getNom();
-		this.admin = kanban.getAdmin();  
+		this.admin = new UserDto(kanban.getAdmin().getEmail(),kanban.getAdmin().getName());  
 		
 	}
 	
@@ -40,14 +40,14 @@ public class KanbanDto {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public User getAdmin() {
+	public UserDto getAdmin() {
 		return admin;
 	}
-	public void setAdmin(User admin) {
+	public void setAdmin(UserDto admin) {
 		this.admin = admin;
 	} 
 	
 	public Kanban convertToEntity() {
-		return new Kanban(this.nom,this.admin);
+		return new Kanban(this.nom,this.admin.convertToEntity());
 	} 
 }

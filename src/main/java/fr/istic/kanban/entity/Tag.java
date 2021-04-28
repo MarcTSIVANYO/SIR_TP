@@ -13,6 +13,10 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Tag implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Long id;
 	String name;
 	@ElementCollection(targetClass = Fiche.class)

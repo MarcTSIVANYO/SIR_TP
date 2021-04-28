@@ -49,6 +49,8 @@ public class JpaRun {
 	private void populateDatabase(){
 
 		User userPersisted = this.persistUser();
+		
+		User userTwo=this.persistUser2();
 
 		Kanban tableauKanban = new Kanban();
 		tableauKanban.setNom("Cours SIR 2021");
@@ -212,94 +214,13 @@ public class JpaRun {
 		return user;
 	}
 
-	
-	/*private void createKanbans() {
-		int numOfKanbans = manager.createQuery("Select a From Section a", Section.class).getResultList().size();
-		
-		//User user = (User) manager.createQuery("Select u from User u where u.email='marctsivanyo@gmail.com'", User.class).getResultList();
-		 
-		User user =new User();
-		user.setEmail("marctsivanyo@gmail.com");
-		user.setName("Marc TSIVANYO");  
-		user.setPassword("145-Kanban");  
+	private User persistUser2(){
+		User user = new User();
+		user.setName("Head of departement");
+		user.setEmail("head-depart@gmail.com");
 		manager.persist(user);
 
-		Tag coffee=new Tag("Coffee",null);
-		Tag tea=new Tag("Tea",null);
-		Tag web=new Tag("Web",null);
-		Tag formation=new Tag("Formation",null);
-		Tag business=new Tag("Businness",null); 
-		manager.persist(business);
-		 
-			Kanban kan=new Kanban();
-			kan.setNom("Google");
-			kan.setAdmin(user); 
-			
-			Kanban kan2=new Kanban();
-			kan2.setNom("Facebook"); 
-			kan2.setAdmin(user); 
-
-			manager.persist(kan);
-			manager.persist(kan2);
-			
-			//Section sectionOne = new Section("En attente",1,kan);
-
-			EnAttente sectionAttente = new EnAttente();
-			sectionAttente.setLibelle("En attente");
-			sectionAttente.setPosition(1);
-			sectionAttente.setKanban(kan);
-		//sectionAttente.setFiches(new ArrayList<>());
-
-		manager.persist(sectionAttente);
-
-			*//*Section sectionTwo =new Section();
-			sectionTwo.setLibelle("En cours");
-			sectionTwo.setPosition(2); 
-			sectionTwo.setKanban(kan);
-
-			Section sectionTree =new Section(); 
-			sectionTree.setLibelle("R�alis�");
-			sectionTree.setPosition(3); 
-			sectionTwo.setKanban(kan2);  
-			
-			manager.persist(sectionAttente);
-			manager.persist(sectionTwo);
-			manager.persist(sectionTree);*//*
-			 
-			ArrayList<Tag> tags = new ArrayList() {{
-				 add(coffee);
-				 add(tea); 
-				 add(formation); 
-				}};
-				for(Tag tag : tags) manager.persist(tag);
-
-				Fiche fiche = new Fiche();
-				fiche.setLibelle("Wait answer to request at Manager");
-				fiche.setLieu("At work");
-				fiche.setOwner(user);//User has to be persisted before persisting the Fiche
-				fiche.setNote("Prioritaire");
-				fiche.setSection(sectionAttente);
-				fiche.setUrl("https://en.wikibooks.org/wiki/Java_Persistence/ManyToMany#:~:text=All%20ManyToMany%20relationships%20require%20a,object's%20primary%20key%20(%20inverseJoinColumns%20).");
-				fiche.setDateButoire(new java.sql.Date(Calendar.getInstance().getTimeInMillis()));
-				fiche.setTags(tags);//Here the problem?
-				
-
-				manager.persist(fiche);
-				
-				*//*Fiche thisFiche = manager.find( Fiche.class, 1L	 );
-	            System.out.println( "Tags associ�s � une fiche" );
-	            for( Tag associatedTag : thisFiche.getTags() ) {
-	                System.out.println( associatedTag );
-	            }*//*
- 
-	}*/
-
-	private void listEmployees() {
-		List<Kanban> resultList = manager.createQuery("Select a From Kanban a", Kanban.class).getResultList();
-		System.out.println("num of Kanbans:" + resultList.size());
-		for (Kanban next : resultList) {
-			System.out.println("next kanban: " + next);
-		}
+		return user;
 	}
 }
 

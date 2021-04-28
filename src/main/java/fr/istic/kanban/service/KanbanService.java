@@ -21,7 +21,7 @@ public class KanbanService {
 	 * Enregistrer une entit�
 	 */
 	public void save(KanbanDto kanbanDto) { 
-        Kanban kanban=new Kanban(kanbanDto.getNom(), kanbanDto.getAdmin());
+        Kanban kanban=new Kanban(kanbanDto.getNom(), kanbanDto.getAdmin().convertToEntity());
         kanbanDao.save(kanban);
     }	
 	
@@ -73,7 +73,7 @@ public class KanbanService {
 				throw new NotFoundException("Aucun resultat pour l'�lement avec l'identifiant "+id);
 			}
 			kanban.setNom(kanbanDto.getNom());
-			kanban.setAdmin(kanbanDto.getAdmin());
+			kanban.setAdmin(kanbanDto.getAdmin().convertToEntity());
 			kanbanDao.update(kanban);
 			kanbanDto.setId(id);
         }catch (Exception e){

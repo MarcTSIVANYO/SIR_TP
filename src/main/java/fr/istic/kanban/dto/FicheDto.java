@@ -15,11 +15,10 @@ public class FicheDto {
 	Date dateButoire;
 	String note;	
 	int  dureeminite; 
-	User owner;  
-	Section section; 
-	List<Tag> tags;
-	public FicheDto(Long id, String libelle, String lieu, String url, Date dateButoire, String note,  User owner,
-			Section section) {
+	Long sectionId;
+	UserDto owner;   
+	List<TagDto> tags;
+	public FicheDto(Long id, String libelle, String lieu, String url, Date dateButoire, String note, Long sectionId,  UserDto owner) {
 		super();
 		this.id=id;
 		this.libelle = libelle;
@@ -27,23 +26,10 @@ public class FicheDto {
 		this.url = url;
 		this.dateButoire = dateButoire;
 		this.note = note; 
-		this.owner = owner;
-		this.section = section;
+		this.owner = owner; 
+		this.sectionId=sectionId;
 	}
-
-	public FicheDto(Long id, String libelle, String lieu, String url, Date dateButoire, String note,  User owner,
-					List<Tag> tags,Section section) {
-		super();
-		this.id=id;
-		this.libelle = libelle;
-		this.lieu = lieu;
-		this.url = url;
-		this.dateButoire = dateButoire;
-		this.note = note;
-		this.owner = owner;
-		this.section = section;
-		this.tags = tags;
-	}
+ 
 	
 	public Long getId() {
 		return id;
@@ -104,28 +90,36 @@ public class FicheDto {
 		this.dureeminite = dureeminite;
 	}
 
-	public User getOwner() {
+
+	public UserDto getOwner() {
 		return owner;
 	}
 
-	public void setOwner(User owner) {
+
+	public void setOwner(UserDto owner) {
 		this.owner = owner;
 	}
 
-	public Section getSection() {
-		return section;
-	}
 
-	public void setSection(Section section) {
-		this.section = section;
-	}
-
-	public List<Tag> getTags() {
+	public List<TagDto> getTags() {
 		return tags;
 	}
 
-	public void setTags(List<Tag> tags) {
+
+	public void setTags(List<TagDto> tags) {
 		this.tags = tags;
 	}
+
+
+	public Long getSectionId() {
+		return sectionId;
+	}
+
+
+	public void setSectionId(Long sectionId) {
+		this.sectionId = sectionId;
+	}
+ 
+	
 	 
 }

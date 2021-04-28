@@ -6,17 +6,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
+import javax.persistence.Id; 
 import javax.persistence.NamedQuery;
 
 import org.mindrot.jbcrypt.BCrypt;
 
+import fr.istic.kanban.dto.UserDto;
+
 @Entity
 @NamedQuery(name="User.findByEmail",
 query="SELECT u FROM User u WHERE u.email = :email")
-public class User  implements Serializable  {
-	
+public class User  implements Serializable  { 
 	Long id;
 	String email;
 	String name;
@@ -74,6 +74,5 @@ public class User  implements Serializable  {
 	public void setPassword(String password) {
 		this.password =  BCrypt.hashpw(password, BCrypt.gensalt());;
 	}
-
-	 
+	
 }

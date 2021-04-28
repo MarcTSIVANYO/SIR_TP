@@ -15,6 +15,7 @@ import org.mockito.MockitoAnnotations;
 
 import fr.istic.kanban.dao.FicheDao;
 import fr.istic.kanban.dto.FicheDto;
+import fr.istic.kanban.dto.UserDto;
 import fr.istic.kanban.entity.Fiche;
 import fr.istic.kanban.entity.User;
 
@@ -23,8 +24,11 @@ private FicheService ficheService = mock(FicheService.class);
 	
 	private FicheDao ficheDao = mock(FicheDao.class);
 	
+	private Long sectionID;
+	
 	@Before public void initMocks() { 
 		MockitoAnnotations.initMocks(this); 
+		sectionID=2L;
 	}
 	 
 	@Test
@@ -54,8 +58,8 @@ private FicheService ficheService = mock(FicheService.class);
         list.add(ficheOne);
         list.add(ficheTwo); 
          
-        FicheDto ficheOneDto=new FicheDto(ficheOne.getId(),ficheOne.getLibelle(),ficheOne.getLieu(), ficheOne.getUrl(), ficheOne.getDateButoire(), ficheOne.getUrl(), ficheOne.getOwner(),ficheOne.getSection());
-        FicheDto ficheTwoDto=new FicheDto(ficheTwo.getId(),ficheTwo.getLibelle(),ficheTwo.getLieu(), ficheTwo.getUrl(), ficheTwo.getDateButoire(), ficheTwo.getUrl(), ficheTwo.getOwner(),ficheTwo.getSection());
+        FicheDto ficheOneDto=new FicheDto(ficheOne.getId(),ficheOne.getLibelle(),ficheOne.getLieu(), ficheOne.getUrl(), ficheOne.getDateButoire(), ficheOne.getUrl(),this.sectionID, new UserDto(ficheOne.getOwner().getEmail(), ficheOne.getOwner().getName()));
+        FicheDto ficheTwoDto=new FicheDto(ficheTwo.getId(),ficheTwo.getLibelle(),ficheTwo.getLieu(), ficheTwo.getUrl(), ficheTwo.getDateButoire(), ficheTwo.getUrl(),this.sectionID, new UserDto(ficheTwo.getOwner().getEmail(), ficheTwo.getOwner().getName()));
         listDto.add(ficheOneDto);
         listDto.add(ficheTwoDto);
         
@@ -81,7 +85,7 @@ private FicheService ficheService = mock(FicheService.class);
         fiche.setLieu("Rennes");
         fiche.setNote("Test");
         fiche.setOwner(user); 
-        FicheDto ficheDto=new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), fiche.getOwner(),fiche.getSection());
+        FicheDto ficheDto=new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(),this.sectionID, new UserDto(fiche.getOwner().getEmail(), fiche.getOwner().getName()));
        
         when(ficheService.getById(2L)).thenReturn(ficheDto); 
         //test
@@ -104,7 +108,7 @@ private FicheService ficheService = mock(FicheService.class);
         fiche.setLieu("Rennes");
         fiche.setNote("Test");
         fiche.setOwner(user); 
-        FicheDto ficheDto=new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), fiche.getOwner(),fiche.getSection());
+        FicheDto ficheDto=new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), this.sectionID, new UserDto(fiche.getOwner().getEmail(), fiche.getOwner().getName()));
         
         ficheService.save(ficheDto); 
         verify(ficheService, times(1)).save(ficheDto);
@@ -123,7 +127,7 @@ private FicheService ficheService = mock(FicheService.class);
         fiche.setLieu("Rennes");
         fiche.setNote("Test");
         fiche.setOwner(user); 
-        FicheDto ficheDto=new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), fiche.getOwner(),fiche.getSection());
+        FicheDto ficheDto=new FicheDto(fiche.getId(),fiche.getLibelle(),fiche.getLieu(), fiche.getUrl(), fiche.getDateButoire(), fiche.getUrl(), this.sectionID, new UserDto(fiche.getOwner().getEmail(), fiche.getOwner().getName()));
         
          when(ficheService.getById(ficheDto.getId())).thenReturn(ficheDto).thenReturn(null);
         //test

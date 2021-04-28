@@ -8,6 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType; 
 import fr.istic.kanban.dto.FicheDto;
+import fr.istic.kanban.dto.TagDto;
 import fr.istic.kanban.service.FicheService;
 
 @Path("/api/fiches")
@@ -50,6 +51,13 @@ public class FicheResource {
 	public void deleteById(@PathParam("id") Long id){ 
 		  ficheService.deleteById(id);; 
 	} 
+
+	@GET
+	@Path("/{id}/tags")
+	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
+	public List<TagDto> getFichesById(@PathParam("id") Long id){ 
+		return ficheService.getTagsByFicheId(id); 
+	}
 }
 
 

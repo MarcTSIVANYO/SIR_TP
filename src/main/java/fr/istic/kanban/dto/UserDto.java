@@ -1,5 +1,6 @@
 package fr.istic.kanban.dto;
- 
+
+import fr.istic.kanban.entity.User;
 
 public class UserDto {
 	String email;
@@ -12,6 +13,12 @@ public class UserDto {
 		this.email = email;
 		this.name = name;
 		this.password=password;
+	}
+	
+	public UserDto(String email, String name) {
+		super();
+		this.email = email;
+		this.name = name; 
 	}
 	
 	public UserDto() {
@@ -44,4 +51,7 @@ public class UserDto {
 		this.password = password;
 	}
 	
+	public User convertToEntity() {
+		return new User(this.email, this.name);
+	}
 }

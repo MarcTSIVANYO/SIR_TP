@@ -7,6 +7,8 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
+
+import fr.istic.kanban.dto.FicheDto;
 import fr.istic.kanban.dto.SectionDto; 
 import fr.istic.kanban.service.SectionService; 
 
@@ -49,5 +51,11 @@ public class SectionResource {
 	public void deleteById(@PathParam("id") Long id){ 
 		  sectionService.deleteById(id);; 
 	}
- 
+
+	@GET
+	@Path("/{id}/fiches")
+	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
+	public List<FicheDto> getFichesById(@PathParam("id") Long id){ 
+		return sectionService.getFichesBySectionId(id); 
+	}
 }

@@ -29,7 +29,8 @@ import fr.istic.kanban.resource.SwaggerResource;
 import fr.istic.kanban.resource.TagResource;
 import fr.istic.kanban.resource.UserResource;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
-import jpa.JpaCreateDB; 
+import jpa.JpaCreateDB;
+import jpa.JpaRun; 
 @ApplicationPath("/")
 public class TestApplication extends Application {
 	     @Override
@@ -37,6 +38,7 @@ public class TestApplication extends Application {
 
         final Set<Class<?>> resources = new HashSet<Class<?>>();
         JpaCreateDB.run(); // Pour créer la base de données
+        //JpaRun.main(null);// Pour initialiser la base de données
         resources.add(KanbanResource.class);
         resources.add(TagResource.class);
         resources.add(UserResource.class);
