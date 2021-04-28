@@ -9,10 +9,7 @@ const baseURL = 'api/users';
   providedIn: 'root'
   })
 export class UserService {
-
-
   constructor(private httpClient: HttpClient) { }
-
   signIn(user: User): any {
     //A Coder
   }

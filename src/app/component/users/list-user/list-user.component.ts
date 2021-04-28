@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs/internal/Observable';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
@@ -14,14 +15,17 @@ export class ListUserComponent implements OnInit {
   headers=['Nom', 'Email', 'Email', 'Actions']
   //users:Observable<User>[]=[]
   users:User[]=[]
-  constructor(private userService: UserService) { }
 
+testEmitter$ = new BehaviorSubject<User[]>(this.users);
+
+  constructor(private userService: UserService) { }
   ngOnInit(): void {
 //https://www.devglan.com/angular/angular-8-crud-example
     //this.users.push(this.userService.getUsers());
     this.userService.getUsers()
     .subscribe( data => {
       this.users.push(data);
+      this.testEmitter$.next(this.users);
     },error => {
       console.log(error);
       });
