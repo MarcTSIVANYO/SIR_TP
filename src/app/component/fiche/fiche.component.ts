@@ -10,6 +10,7 @@ export class FicheComponent implements OnInit {
 
   @Input() ficheId = '#26';
   @Input() ficheLibelle = 'JaxRS et OpenAPI';
+  description = 'API Java permettant de créer des services Web avec une architecture REST';
   @Input() ficheDate = new Date();
   @Input() ficheDuree = '3h';
   @Input() ficheOwner = new User(1, 'alpha@gmail.com', 'Alpha Beta', '');

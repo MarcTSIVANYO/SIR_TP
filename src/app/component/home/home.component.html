@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-6" *ngFor="let kanban of kanbans">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ kanban.nom }}</h5>
+        <p class="card-text">Ceci est le tableau pour la gestion du module SIR 2020/2021</p>
+        <a class="btn btn-primary" [routerLink]="[kanban.id]">Ouvrir</a>
+      </div>
+    </div>
+  </div>
+</div>

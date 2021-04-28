@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Kanban} from '../model/kanban.model';
 import {HttpClient} from '@angular/common/http';
+import {Section} from '../model/section.model';
 
 const URL = '/api/kanban/';
 @Injectable()
@@ -22,6 +23,7 @@ export class KanbanService {
       .subscribe(
         (response: Kanban[]) => {
           this.kanbans = response;
+          console.log(response);
           this.emitKanban();
         },
         (error) => {
@@ -56,19 +58,8 @@ export class KanbanService {
       );
   }
 
-  getKanbanById(id: number): Kanban {
-    let kanban: any;
-    this.httpClient
-      .get<Kanban>(URL + id)
-      .subscribe(
-        (response: Kanban) => {
-          kanban = response;
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
-    return kanban;
+  getKanbanSectionById(kanbanId: number): Observable<Section[]> {
+    return this.httpClient.get<Section[]>(URL + kanbanId + '/sections');
   }
 
   deleteKanban(id: number): void { // A revoir le delete

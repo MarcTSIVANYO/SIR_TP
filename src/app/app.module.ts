@@ -16,6 +16,10 @@ import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ListUserComponent } from './component/users/list-user/list-user.component';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import {SectionComponent} from './component/section/section.component';
+import { KanbanbordComponent } from './component/kanbanbord/kanbanbord.component';
+import { HomeComponent } from './component/home/home.component';
+import {KanbanShareInfos} from './service/kanban-share-infos';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     HeaderComponent,
     LoginComponent,
     FicheComponent,
-    ListUserComponent
+    ListUserComponent,
+    SectionComponent,
+    KanbanbordComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,8 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     FicheService,
     SectionService,
     TagService,
-    UserService
+    UserService,
+    KanbanShareInfos
   ],
   bootstrap: [AppComponent]
 })
