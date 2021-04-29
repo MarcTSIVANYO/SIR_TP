@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from '../model/user.model';
 import {Observable} from 'rxjs';
+import { User } from '../model/user';
 
 
 const baseURL = 'api/users';
@@ -9,9 +9,22 @@ const baseURL = 'api/users';
   providedIn: 'root'
   })
 export class UserService {
-  constructor(private httpClient: HttpClient) { }
+
+  submitted = false;
+
+  constructor(private httpClient: HttpClient) {
+  }
   signIn(user: User): any {
     //A Coder
+  }
+
+  reloadSubmitData( value:boolean){
+    this.submitted=value;
+  }
+
+
+  getSumitted():boolean {
+    return this.submitted;
   }
 
   getUsers():Observable<User>{

@@ -1,23 +1,47 @@
-<h1>{{title}}</h1>
+<div class="col-md-10">
+  <app-add-user></app-add-user>
+</div>
+<hr/>
+<div *ngIf="message" class="alert alert-primary" role="alert">
+  {{ message }}
+</div>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>{{title}}</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let user of users; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveUser(user, i)"
+      >
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentUser">
+      <h4>Détail Utilisateur</h4>
+      <div>
+        <label><strong>Nom:</strong></label> {{ currentUser.name }}
+      </div>
+      <div>
+        <label><strong>Email:</strong></label>
+        {{ currentUser.email }}
+      </div>
+      <button type="button" class="btn btn-warning btn-sm px-3 position" (click)="updateUser()">
+        <i class="fa fa-pencil"></i>
+      </button>
 
-<div class="bg-light p-5 rounded">
-  <table class="table align-middle">
-    <thead>
-      <th *ngFor = "let column of headers">
-        {{column}}
-      </th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.password}}</td>
-        <td>
-          <button type="button" class="btn btn-danger btn-sm px-3" (click)="deleteUser(user)">
-            <i class="fas fa-times"></i>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+      <button type="button" class="btn btn-danger btn-sm px-3 position" (click)="deleteUser()">
+        <i class="fa fa-close"></i>
+      </button>
+
+    </div>
+
+    <div *ngIf="!currentUser">
+      <br />
+      <p>Cliquez sur un élement pour voir les détails...</p>
+    </div>
+  </div>
 </div>

@@ -20,7 +20,12 @@ import {SectionComponent} from './component/section/section.component';
 import { KanbanbordComponent } from './component/kanbanbord/kanbanbord.component';
 import { HomeComponent } from './component/home/home.component';
 import {KanbanShareInfos} from './service/kanban-share-infos';
-
+import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogService } from './service/confirmation-dialog.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddUserComponent } from './component/users/add-user/add-user.component';
+import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,14 +36,19 @@ import {KanbanShareInfos} from './service/kanban-share-infos';
     ListUserComponent,
     SectionComponent,
     KanbanbordComponent,
-    HomeComponent
+    HomeComponent,
+    ConfirmationDialogComponent,
+    AddUserComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [
     KanbanService,
@@ -46,8 +56,10 @@ import {KanbanShareInfos} from './service/kanban-share-infos';
     SectionService,
     TagService,
     UserService,
-    KanbanShareInfos
+    KanbanShareInfos,
+    ConfirmationDialogService
   ],
+  entryComponents: [ ConfirmationDialogComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
