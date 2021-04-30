@@ -1,0 +1,53 @@
+<div class="d-flex align-items-center p-3 my-3  bg-secondary rounded box-shadow">
+  <i class="fa fa-table fa-3x mr-3"></i>
+  <div class="lh-100">
+    <h4 class="mb-0  lh-10">Tableau Kanban</h4>
+    <small>Projet SIR</small>
+  </div>
+</div>
+
+<div class="d-flex align-items-center p-3 my-3  bg-light rounded box-shadow">
+  <div>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="openModal(addKanbanModal)">Créer <i class="fa fa-plus-circle"></i></button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6" *ngFor="let kanban of kanbans" style="margin-bottom: 2%">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ kanban.nom }}</h5>
+        <p class="card-text">Ceci est le tableau pour la gestion du module SIR 2020/2021</p>
+        <a class="btn btn-primary" [routerLink]="[kanban.id]">Ouvrir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Formulaire pour ajouter un kanban -->
+<ng-template #addKanbanModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="editPosteModalLabel">Créer un kanban board</h5>
+    <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup] ="addKanbanForm" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label class="col-sm-4 col-form-label"> Nom </label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" formControlName="kanbanName">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn bg-secondary text-white" (click)="modal.dismiss()">Annuler</button>
+        <button type="submit" class="btn bg-secondary text-white"
+                [disabled]="addKanbanForm.invalid">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+</ng-template>
