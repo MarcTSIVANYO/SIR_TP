@@ -15,9 +15,10 @@ import {User} from '../../model/user.model';
 export class SectionComponent implements OnInit {
   @Input() section: Section;
   @Input() fiches: Fiche[] = [];
+  @Input() libelle = '';
   addFicheForm: FormGroup;
   idSection: number;
-  constructor(private formBuilder: FormBuilder, private modalService: NgbModal, private ficheService: FicheService) { }
+  constructor(private formBuilder: FormBuilder, private modalService: NgbModal, private ficheService: FicheService, private sectionService: SectionService) { }
 
   ngOnInit(): void {
   this.initFomulaire();
@@ -34,8 +35,9 @@ export class SectionComponent implements OnInit {
   }
 
 
-  onAddFiche(targetModal, id: number): void {
-    this.idSection = id;
+  onAddFiche(targetModal, sec: Section): void {
+    this.idSection = sec.id;
+    console.log(this.idSection);
     this.modalService.open(targetModal, {
       centered: true,
       backdrop: 'static'
@@ -63,6 +65,6 @@ export class SectionComponent implements OnInit {
       sectionId: this.idSection
     };
     this.ficheService.createFiche(fiche);
-    console.log(fiche);
+    this.sectionService.getAll();
   }
 }

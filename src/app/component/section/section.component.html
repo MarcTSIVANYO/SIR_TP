@@ -1,7 +1,7 @@
  <!-- Section en attente-->
   <div class="bg-secondary" style="padding: 4%; margin: -2%">
-    <h3 class="text-center">{{section?.libelle}}
-      <i *ngIf="section?.libelle === 'En attente'" class="fa fa-plus-circle" (click)="onAddFiche(addFiceModal,section.id)"></i></h3>
+    <h3 class="text-center">{{libelle}}
+      <i *ngIf="libelle === 'En attente'" class="fa fa-plus-circle" (click)="onAddFiche(addFiceModal,section)"></i></h3>
 
     <div *ngFor="let fiche of fiches">
       <app-fiche [fiche]="fiche"></app-fiche>

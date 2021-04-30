@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
   getKanbanId(kanbanId: number): void{
     if (kanbanId !== null){
       this.kanbanService.getKanbanSectionById(kanbanId).subscribe(
-        (reponse: Section[]) => { this.sections = reponse; }
+        (reponse: Section[]) => { this.sections = reponse;}
       );
       this.route.navigate(['kanban']);
     }
@@ -57,6 +57,10 @@ export class HomeComponent implements OnInit {
 
   onSubmit(): void {
     this.modalService.dismissAll();
+    const sectionAttente = new Section(1, 'En attente', 1);
+    const sectionEncours = new Section(2, 'En cours', 2);
+    const sectionExecute = new Section(3, 'En execute', 3);
+    const sectionss: Section[] = [sectionAttente, sectionEncours, sectionExecute];
     const name = this.addKanbanForm.value.kanbanName;
     const newKanban: Kanban = {
       id: 0,
@@ -65,10 +69,10 @@ export class HomeComponent implements OnInit {
         id: 1,
         email: '',
         name: '',
-        password: null
-      }
+        password: null,
+      },
+      sections: sectionss
     };
-    console.log(newKanban);
     this.kanbanService.createKanban(newKanban);
   }
 
