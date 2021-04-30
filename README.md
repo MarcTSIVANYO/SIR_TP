@@ -11,5 +11,5 @@
 
 
 
-### Le TP Pokeman en react est accessible via : [Tp Pokeman react](https://github.com/MarcTSIVANYO/SIR_TP/tree/pokeman-react)
+### Le TP Pokemon en react est accessible via : [Tp Pokemon react](https://github.com/MarcTSIVANYO/SIR_TP/tree/pokemon-react)
 
