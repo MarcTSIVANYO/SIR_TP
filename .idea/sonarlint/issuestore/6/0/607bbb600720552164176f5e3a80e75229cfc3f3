@@ -1,7 +1,23 @@
 
+X	java:S125"<This block of commented-out lines of code should be removed.(Ë‡Œ™8Ş€å‘/
+u
+java:S2139O"XEither log this exception and handle it, or rethrow it with some contextual information.(”ı¾8Ş€å‘/
+u
+java:S2139x"XEither log this exception and handle it, or rethrow it with some contextual information.(”ı¾8îÉ†óˆ/
+^
+java:S3457P"AFormat specifiers should be used instead of string concatenation.(‚ÍÂÕ8Ş€å‘/
+M
+java:S3416"1Update this logger to use "SectionService.class".(¥Õ¥;8Ş€å‘/
+]	java:S125!"<This block of commented-out lines of code should be removed.(®…›Öúÿÿÿÿ8Ş€å‘/
+^
+java:S3457y"AFormat specifiers should be used instead of string concatenation.(‚ÍÂÕ8îÉ†óˆ/
+f
+java:S1192P"IDefine a constant instead of duplicating this literal "Error : " 3 times.(‚ÍÂÕ8Ş€å‘/
+m
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Õ¥;8Ş€å‘/
 
-java:S11921"tDefine a constant instead of duplicating this literal "Aucun resultat pour l'ï¿½lement avec l'identifiant " 3 times.(ğÚµøÿÿÿÿ
-]	java:S125"<This block of commented-out lines of code should be removed.(®…›Öúÿÿÿÿ8¹ÕõÆˆ/
-N	java:S1065"9Replace this use of System.out or System.err by a logger.(˜ŸÚá
-X	java:S125"<This block of commented-out lines of code should be removed.(Ë‡Œ™8´Ô²Æˆ/
-N	java:S106L"9Replace this use of System.out or System.err by a logger.(˜ŸÚá
+java:S1192<"tDefine a constant instead of duplicating this literal "Aucun resultat pour l'ï¿½lement avec l'identifiant " 4 times.(ğÚµøÿÿÿÿ
+^
+java:S3457b"AFormat specifiers should be used instead of string concatenation.(‚ÍÂÕ8îÉ†óˆ/
+\
+java:S1128":Remove this unused import 'fr.istic.kanban.entity.Kanban'.(öÕ±¡øÿÿÿÿ8Ş€å‘/

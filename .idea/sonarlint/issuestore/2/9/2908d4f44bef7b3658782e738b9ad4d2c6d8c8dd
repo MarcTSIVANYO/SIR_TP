@@ -1,4 +1,5 @@
 
-Q	java:S125"<This block of commented-out lines of code should be removed.(°½Šü
-P	java:S125"<This block of commented-out lines of code should be removed.(¹í¹K
-Q	java:S125+"<This block of commented-out lines of code should be removed.(ÜáäÙ
+U
+java:S1128"8Remove this unused import 'fr.istic.kanban.entity.User'.(€ù½İ8¥ÿå‘/
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8îÉ†óˆ/

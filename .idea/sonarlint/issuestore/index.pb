@@ -1,6 +1,4 @@
 
-d
-4src/main/java/fr/istic/kanban/res/FicheResource.java,1/3/138a9f31d5d2c7d6874ee56628a52cee6ee2773c
 a
 1src/main/java/fr/istic/kanban/run/RestServer.java,f/0/f08fcbd946558ed34137c90e0245ddbf4f3210f1
 _
@@ -20,15 +18,9 @@ a
 R
 "src/main/webapp/swagger/index.html,c/3/c3fc756ce71f8817920ac7fb1bee580fb9b95d68
 f
-6src/main/java/fr/istic/kanban/res/SwaggerResource.java,e/8/e8123a6eb01216819dd310e4a81ca15e485612ab
-f
 6src/main/java/fr/istic/kanban/run/TestApplication.java,9/7/9779fbbd9cd0073bcb5055518c93992a33fd0714
 _
 /src/main/java/fr/istic/kanban/dao/FicheDao.java,c/a/cabc86d5ab7cc2546b1ac2bf6055df2f325e6f6e
-O
-src/main/java/jpa/JpaTest2.java,d/3/d300f0a60013f787e836e3f3eabc0f22ea5ba559
-N
-src/main/java/jpa/JpaTest.java,c/f/cf04688d71d5fcc4c60704d78647d1b293f9c936
 i
 9src/main/java/fr/istic/kanban/service/SectionService.java,6/0/607bbb600720552164176f5e3a80e75229cfc3f3
 a
@@ -54,8 +46,6 @@ a
 ^
 .src/main/java/fr/istic/kanban/dao/UserDao.java,6/7/67f14bdb8d1fd428e128725ab106f2db57ccb886
 e
-5src/main/java/fr/istic/kanban/res/KanbanResource.java,e/4/e4d0a0748a72104dd4ddd162f2cab7a7ccb5270a
-e
 5src/main/java/fr/istic/kanban/dao/AbstractJpaDao.java,2/4/246b841df1d587fa33ed333bb623015c66e65bb8
 `
 0src/main/java/fr/istic/kanban/dto/KanbanDto.java,2/9/2908d4f44bef7b3658782e738b9ad4d2c6d8c8dd
@@ -63,5 +53,11 @@ e
 0src/main/java/fr/istic/kanban/dao/KanbanDao.java,c/4/c4de2870d786b3f1ff94ba0209b21cc296c35b32
 h
 8src/main/java/fr/istic/kanban/service/KanbanService.java,f/6/f600f853964badb02d952cd409697f5bbc68667e
-T
-$src/main/java/jpa/JpaDetailTest.java,4/5/4567756b7a8462cc250624d04eca3102b8de70dc
+R
+"src/main/java/jpa/JpaCreateDB.java,0/a/0ae7fbf320976c922ea0049ac69368d87c5ac140
+M
+src/main/java/jpa/JpaRun.java,8/b/8b357240ee62950c06f2d2c8a73fe13fe1b31dc8
+j
+:src/main/java/fr/istic/kanban/resource/KanbanResource.java,e/e/eea397b236dc1716ecbed9db49016a5a4e293e80
+Z
+*src/main/java/jpa/EntityManagerHelper.java,b/b/bb1bddad543c73643434f9b791f6e65785cbfc3b

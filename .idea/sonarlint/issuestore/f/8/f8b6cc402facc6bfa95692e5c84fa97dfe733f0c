@@ -1,0 +1,15 @@
+
+W
+java:S3457%"AFormat specifiers should be used instead of string concatenation.(í¦†¡
+\
+java:S3457"AFormat specifiers should be used instead of string concatenation.(çéñŠúÿÿÿÿ
+U
+java:S1128":Remove this unused import 'fr.istic.kanban.entity.Kanban'.(öÕ±¡øÿÿÿÿ
+l
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íÊ¥¦øÿÿÿÿ
+w
+java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(çéñŠúÿÿÿÿ
+M
+java:S2629%"7Use the built-in formatting to construct this argument.(í¦†¡
+W
+java:S1128"ARemove this unused import 'fr.istic.kanban.service.FicheService'.(¡‰‡„

@@ -1,6 +1,7 @@
 package fr.istic.kanban.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,10 +22,18 @@ public class User  implements Serializable  {
 	String email;
 	String name;
 	String password;
+	//List<Kanban> kanbans;
 	
 
 	public User(String email, String name) {
 		super();
+		this.email = email;
+		this.name = name;
+	}
+
+	public User(Long id, String email, String name) {
+		super();
+		this.id = id;
 		this.email = email;
 		this.name = name;
 	}

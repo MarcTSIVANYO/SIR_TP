@@ -3,11 +3,20 @@ package fr.istic.kanban.dto;
 import fr.istic.kanban.entity.User;
 
 public class UserDto {
+	Long id;
 	String email;
 	String name;
 	String password;
 	 
 	
+	public UserDto(Long id, String email, String name,String password) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.name = name;
+		this.password=password;
+	}
+
 	public UserDto(String email, String name,String password) {
 		super();
 		this.email = email;
@@ -20,9 +29,24 @@ public class UserDto {
 		this.email = email;
 		this.name = name; 
 	}
+
+	public UserDto(Long id, String email, String name) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.name = name;
+	}
 	
 	public UserDto() {
 		super(); 
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getEmail() {
@@ -52,6 +76,6 @@ public class UserDto {
 	}
 	
 	public User convertToEntity() {
-		return new User(this.email, this.name);
+		return new User(this.id, this.email, this.name);
 	}
 }

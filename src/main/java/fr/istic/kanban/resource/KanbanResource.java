@@ -33,8 +33,8 @@ public class KanbanResource {
 	@POST 
 	@javax.ws.rs.Produces( MediaType.APPLICATION_JSON)
 	@javax.ws.rs.Consumes( MediaType.APPLICATION_JSON)
-	public KanbanDto save(KanbanDto kanbanDto){ 
-		 kanbanService.save(kanbanDto);
+	public KanbanDto save(KanbanDto kanbanDto){
+		  kanbanService.save(kanbanDto);
 		 return kanbanDto;
 	}
 	

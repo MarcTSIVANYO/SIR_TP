@@ -2,39 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3ef754e-6f6d-471d-88c3-84562dd5d1a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jpa/TestJointFetch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jpa/TestN1Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/138a9f31d5d2c7d6874ee56628a52cee6ee2773c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/2908d4f44bef7b3658782e738b9ad4d2c6d8c8dd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/2908d4f44bef7b3658782e738b9ad4d2c6d8c8dd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/344662bb9af9afb8ee7c5a1a906f1bea1ab2ab21" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/344662bb9af9afb8ee7c5a1a906f1bea1ab2ab21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/4567756b7a8462cc250624d04eca3102b8de70dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/607bbb600720552164176f5e3a80e75229cfc3f3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/607bbb600720552164176f5e3a80e75229cfc3f3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cf04688d71d5fcc4c60704d78647d1b293f9c936" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d300f0a60013f787e836e3f3eabc0f22ea5ba559" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e4d0a0748a72104dd4ddd162f2cab7a7ccb5270a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8123a6eb01216819dd310e4a81ca15e485612ab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f600f853964badb02d952cd409697f5bbc68667e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f600f853964badb02d952cd409697f5bbc68667e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/c/fc316c06ba74b4143fc9ecbce9c6d9aeb6beab97" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/c/fc316c06ba74b4143fc9ecbce9c6d9aeb6beab97" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/FicheDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/FicheDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/FicheDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/FicheDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Fiche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Fiche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/KanbanDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/KanbanDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Kanban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Kanban.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Tag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/FicheService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/FicheService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/resource/KanbanResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/resource/KanbanResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/KanbanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/KanbanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/SectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/SectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/TagService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpa/JpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/JpaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpa/JpaTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/JpaTest2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/dao/FicheDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/dao/FicheDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpa/JpaRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpa/JpaRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/dto/FicheDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/dto/FicheDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/Fiche.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/Fiche.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/dto/KanbanDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/dto/KanbanDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/dto/UserDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/Kanban.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/Kanban.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/Section.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/Section.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/Tag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/Tag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/FicheResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/FicheResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/KanbanResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/KanbanResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/SectionResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/SectionResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/SwaggerResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/SwaggerResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/TagResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/TagResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/UserResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/resource/UserResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/run/TestApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/run/TestApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/FicheService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/FicheService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/KanbanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/KanbanService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/SectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/SectionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/TagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/TagService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/kanban/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jpa/JpaTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jpa/JpaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jpa/JpaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jpa/JpaTest2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jpa/JpaTest2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jpa/JpaTest2$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jpa/JpaTest2$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jpa/JpaTest2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jpa/JpaTest2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jpa/JpaRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jpa/JpaRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/istic/kanban/service/FicheServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/istic/kanban/service/FicheServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/istic/kanban/service/KanbanServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/istic/kanban/service/KanbanServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/fr/istic/kanban/service/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fr/istic/kanban/service/UserServiceTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,53 +59,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaRun.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="56" column="44" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/resource/KanbanResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/KanbanService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/UserDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+              <folding>
+                <element signature="e#1304#1305#0" expanded="true" />
+                <element signature="e#1349#1350#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Kanban.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="60">
+              <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
               <folding>
                 <element signature="e#0#25#1" expanded="true" />
-                <element signature="e#1251#1252#0" expanded="true" />
-                <element signature="e#1267#1268#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jpa/TestJointFetch.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="24" column="107" selection-start-line="24" selection-start-column="107" selection-end-line="24" selection-end-column="107" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#0#54#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Fiche.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-733">
-              <caret line="12" column="43" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#0#42#1" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+                <element signature="e#893#894#0" expanded="true" />
+                <element signature="e#931#932#0" expanded="true" />
+                <element signature="e#956#957#0" expanded="true" />
+                <element signature="e#1077#1078#0" expanded="true" />
+                <element signature="e#1099#1100#0" expanded="true" />
+                <element signature="e#1151#1152#0" expanded="true" />
+                <element signature="e#1182#1183#0" expanded="true" />
+                <element signature="e#1318#1319#0" expanded="true" />
+                <element signature="e#1406#1407#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,67 +124,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jpa/TestN1Select.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="20" column="53" lean-forward="true" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+            <state relative-caret-position="239">
+              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#0#23#1" expanded="true" />
+                <element signature="e#0#43#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/EnAttente.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Execute.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Section.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
-              <folding>
-                <element signature="e#1382#1383#0" expanded="true" />
-                <element signature="e#1474#1475#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/FicheDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+            <state relative-caret-position="25">
+              <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -193,23 +167,27 @@
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Attente.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/EnAttente.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/KanbanDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/KanbanDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/FicheDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Section.java" />
         <option value="$PROJECT_DIR$/src/main/java/jpa/JpaTest2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/KanbanService.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/SectionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/TagService.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jpa/JpaTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Tag.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Fiche.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/FicheDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/FicheService.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/jpa/TestJointFetch.java" />
         <option value="$PROJECT_DIR$/src/main/java/jpa/TestN1Select.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/resource/KanbanResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/KanbanDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jpa/JpaRun.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/KanbanService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/UserDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Kanban.java" />
       </list>
     </option>
@@ -235,17 +213,19 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="6" />
     <option name="y" value="25" />
-    <option name="width" value="1368" />
-    <option name="height" value="744" />
+    <option name="width" value="1360" />
+    <option name="height" value="739" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,7 +293,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="kanban" type="462c0819:PsiDirectoryNode" />
-              <item name="run" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testjpa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIR_TP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kanban" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testjpa" type="b2602c69:ProjectViewProjectNode" />
@@ -342,8 +331,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -384,8 +371,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JpaInitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="jpa.JpaInitTest" />
+    <configuration name="JpaRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jpa.JpaRun" />
       <module name="testjpa" />
       <extension name="coverage">
         <pattern>
@@ -439,10 +426,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.RestServer" />
+        <item itemvalue="Application.JpaRun" />
         <item itemvalue="Application.TestJointFetch" />
         <item itemvalue="Application.JpaTest" />
         <item itemvalue="Application.JpaDetailTest" />
-        <item itemvalue="Application.JpaInitTest" />
       </list>
     </recent_temporary>
   </component>
@@ -467,17 +454,20 @@
       <workItem from="1617196433496" duration="8793000" />
       <workItem from="1617229564397" duration="4182000" />
       <workItem from="1617268854217" duration="15839000" />
+      <workItem from="1619740509174" duration="3451000" />
+      <workItem from="1619778695734" duration="6191000" />
+      <workItem from="1619790054870" duration="2701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34136000" />
+    <option name="totallyTimeSpent" value="47305000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
+    <frame x="6" y="25" width="1360" height="739" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21060605" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21189025" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -486,8 +476,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32744783" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.097913325" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.13001606" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.671521" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.19255663" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -542,6 +532,12 @@
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/KanbanService.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -556,13 +552,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/swagger/swagger-ui-bundle.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/res/SwaggerResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/res/SwaggerResource.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/run/TestApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -584,13 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -633,41 +616,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/res/SectionResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/res/SectionResource.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.21.Final/hibernate-core-5.4.21.Final-sources.jar!/org/hibernate/internal/SessionImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="707" selection-start-line="707" selection-end-line="707" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/resteasy/resteasy-core/4.3.0.Final/resteasy-core-4.3.0.Final-sources.jar!/org/jboss/resteasy/core/MethodInjectorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/KanbanDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/AbstractJpaDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#31#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,18 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/KanbanDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" selection-start-line="13" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#208#209#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/SectionDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -697,66 +638,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/EntityManagerHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-86">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaDetailTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaInitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaTest2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/res/FicheResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#566#567#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/res/KanbanResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/KanbanService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="112" column="29" selection-start-line="112" selection-start-column="29" selection-end-line="112" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/SectionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaDetailTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaInitTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaTest2.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/res/FicheResource.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/res/KanbanResource.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/TagService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -771,20 +657,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="102" column="30" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
-          <folding>
-            <element signature="e#2512#3676#0" />
-            <element signature="e#3500#3886#0" />
-            <element signature="e#4682#4944#0" />
-            <element signature="e#5124#5133#0" />
-            <element signature="e#0#22#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaTest.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2-sources.jar!/javax/persistence/ElementCollection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4">
@@ -808,13 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="53" column="18" lean-forward="true" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="40" column="65" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -850,20 +716,6 @@
             <element signature="e#1382#1383#0" expanded="true" />
             <element signature="e#1474#1475#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/FicheDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -930,15 +782,142 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaCreateDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/SectionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/FicheDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/KanbanDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#788#789#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/EntityManagerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/AbstractJpaDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#31#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dao/KanbanDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jpa/JpaRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="56" column="44" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/resource/KanbanResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#43#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/dto/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+          <folding>
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1349#1350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/service/KanbanService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jboss/resteasy/resteasy-core/4.3.0.Final/resteasy-core-4.3.0.Final-sources.jar!/org/jboss/resteasy/core/MethodInjectorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/istic/kanban/entity/Kanban.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="60">
+          <caret line="51" column="43" lean-forward="true" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
           <folding>
             <element signature="e#0#25#1" expanded="true" />
-            <element signature="e#1251#1252#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+            <element signature="e#1406#1407#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
         </state>
       </provider>
     </entry>

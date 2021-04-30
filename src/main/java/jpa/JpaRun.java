@@ -56,6 +56,12 @@ public class JpaRun {
 		tableauKanban.setNom("Cours SIR 2021");
 		tableauKanban.setAdmin(userPersisted);
 
+		Kanban tableauKanban1 = new Kanban();
+		tableauKanban1.setNom("MPC SIR 2021");
+		tableauKanban1.setAdmin(userPersisted);
+
+
+
 		EnAttente sectionEnAttente = new EnAttente();
 		sectionEnAttente.setLibelle("En attente");
 		sectionEnAttente.setPosition(1);
@@ -190,6 +196,7 @@ public class JpaRun {
 		tagThree.addFiche(fiche3);
 
 		manager.persist(tableauKanban);
+		manager.persist(tableauKanban1);
 
 		manager.persist(sectionEnAttente);
 		manager.persist(sectionEnCours);

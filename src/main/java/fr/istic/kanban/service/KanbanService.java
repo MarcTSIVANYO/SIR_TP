@@ -20,9 +20,19 @@ public class KanbanService {
 	/*
 	 * Enregistrer une entit�
 	 */
-	public void save(KanbanDto kanbanDto) { 
-        Kanban kanban=new Kanban(kanbanDto.getNom(), kanbanDto.getAdmin().convertToEntity());
-        kanbanDao.save(kanban);
+	public void save(KanbanDto kanbanDto) {
+		Kanban kanban;
+		if(kanbanDto.getAdmin().getId() == 0) {
+
+			kanban = new Kanban(kanbanDto.getNom(), kanbanDto.getAdmin().convertToEntity());
+		}
+		else {
+			kanban = new Kanban();
+			kanban.setNom(kanbanDto.getNom());
+			kanban.setAdmin(kanbanDto.getAdmin().convertToEntity());
+		}
+		kanbanDao.save(kanban);
+
     }	
 	
 	/*

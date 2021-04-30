@@ -1,6 +1,32 @@
 
-N	java:S106F"9Replace this use of System.out or System.err by a logger.(˜ŸÚá
-N	java:S1060"9Replace this use of System.out or System.err by a logger.(˜ŸÚá
-X	java:S125"<This block of commented-out lines of code should be removed.(§óüº8ë³ÌÇˆ/
-
-java:S1192,"tDefine a constant instead of duplicating this literal "Aucun resultat pour l'ï¿½lement avec l'identifiant " 3 times.(ðÚµøÿÿÿÿ
+^
+java:S3457N"AFormat specifiers should be used instead of string concatenation.( Æ™ø8Ñ¬ñ˜’/
+u
+java:S2139Y"XEither log this exception and handle it, or rethrow it with some contextual information.(”ý¾8Ñ¬ñ˜’/
+L
+java:S3416"0Update this logger to use "KanbanService.class".(¥Õ¥;8ÏûãË‘/
+^
+java:S34578"AFormat specifiers should be used instead of string concatenation.(…§ùº8Ñ¬ñ˜’/
+X	java:S125+"<This block of commented-out lines of code should be removed.(§óüº8Ñ¬ñ˜’/
+T
+java:S2629N"7Use the built-in formatting to construct this argument.( Æ™ø8Ñ¬ñ˜’/
+–
+java:S1192?"tDefine a constant instead of duplicating this literal "Aucun resultat pour l'ï¿½lement avec l'identifiant " 4 times.(ðÚµøÿÿÿÿ8Ñ¬ñ˜’/
+T
+java:S26298"7Use the built-in formatting to construct this argument.(…§ùº8Ñ¬ñ˜’/
+f
+java:S1192C"IDefine a constant instead of duplicating this literal "Error : " 3 times.(‚ÍÂÕ8Ñ¬ñ˜’/
+u
+java:S2139{"XEither log this exception and handle it, or rethrow it with some contextual information.(”ý¾8Ñ¬ñ˜’/
+m
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Õ¥;8ÏûãË‘/
+Y
+java:S2629e"7Use the built-in formatting to construct this argument.(¤É¥éøÿÿÿÿ8Ñ¬ñ˜’/
+^
+java:S3457C"AFormat specifiers should be used instead of string concatenation.(‚ÍÂÕ8Ñ¬ñ˜’/
+^
+java:S3457Z"AFormat specifiers should be used instead of string concatenation.(‚ÍÂÕ8Ñ¬ñ˜’/
+c
+java:S3457e"AFormat specifiers should be used instead of string concatenation.(¤É¥éøÿÿÿÿ8Ñ¬ñ˜’/
+^
+java:S3457|"AFormat specifiers should be used instead of string concatenation.(‚ÍÂÕ8Ñ¬ñ˜’/

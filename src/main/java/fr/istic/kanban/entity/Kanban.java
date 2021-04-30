@@ -19,6 +19,7 @@ public class Kanban implements Serializable {
 	String nom;
 	User admin;
 
+
 	@ElementCollection(targetClass = Section.class)
 	List<Section> sections = new ArrayList<>();
 	
@@ -27,6 +28,7 @@ public class Kanban implements Serializable {
 		this.nom = nom;
 		this.admin = admin;
 	}
+
 	
 	public Kanban() { 
 	}
@@ -47,7 +49,7 @@ public class Kanban implements Serializable {
 	}
 	
 
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.MERGE})
 	public User getAdmin() {
 		return admin;
 	}

@@ -23,7 +23,7 @@ public class KanbanDto {
 		super();
 		this.id = kanban.getId();
 		this.nom = kanban.getNom();
-		this.admin = new UserDto(kanban.getAdmin().getEmail(),kanban.getAdmin().getName());  
+		this.admin = new UserDto(kanban.getAdmin().getId(), kanban.getAdmin().getEmail(),kanban.getAdmin().getName());
 		
 	}
 	

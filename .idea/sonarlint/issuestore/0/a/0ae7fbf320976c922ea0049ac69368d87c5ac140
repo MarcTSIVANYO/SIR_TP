@@ -1,0 +1,27 @@
+
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(„êıÿÿÿÿ
+O
+java:S1128"9Remove this unused import 'fr.istic.kanban.entity.Fiche'.(ä§ªã
+V	java:S125%"<This block of commented-out lines of code should be removed.(¦ıŞÆşÿÿÿÿ
+V
+java:S1128";Remove this unused import 'fr.istic.kanban.entity.Section'.(€ã½ªûÿÿÿÿ
+E
+java:S1128"/Remove this unused import 'java.util.Calendar'.(ÿÛö´
+N
+java:S1128"8Remove this unused import 'fr.istic.kanban.entity.User'.(€ù½İ
+U
+java:S1128":Remove this unused import 'fr.istic.kanban.entity.Kanban'.(öÕ±¡øÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(­Üéêøÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+R
+java:S1128"7Remove this unused import 'fr.istic.kanban.entity.Tag'.(õö™úşÿÿÿÿ
+S
+java:S1128"=Remove this unused import 'fr.istic.kanban.entity.EnAttente'.(ÉøÌ
+O
+java:S1118":Add a private constructor to hide the implicit public one.(èÔt
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ıÔµÿüÿÿÿÿ
+C	java:S108")Either remove or fill this block of code.(¡»¢üùÿÿÿÿ

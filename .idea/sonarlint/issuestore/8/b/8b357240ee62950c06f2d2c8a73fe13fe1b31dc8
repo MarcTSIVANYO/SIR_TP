@@ -1,0 +1,18 @@
+
+h
+java:S1192V"FDefine a constant instead of duplicating this literal "ISTIC" 5 times.(öØû›úÿÿÿÿ8ãöÄôˆ/
+ë
+java:S1192X"ÍDefine a constant instead of duplicating this literal "https://teams.microsoft.com/_#/school/conversations/G%C3%A9n%C3%A9ral?threadId=19:3733cf5795d445b7855cafdbc1a29dfd@thread.tacv2&ctx=channel" 10 times.(áĞ·¶8…™¶ôˆ/
+>
+java:S3416")Update this logger to use "JpaRun.class".(¥Õ¥;
+n
+java:S1192W"LDefine a constant instead of duplicating this literal "Prioritaire" 8 times.(é¶®•şÿÿÿÿ8¯¶ôˆ/
+]	java:S125+"<This block of commented-out lines of code should be removed.(É‚àÊşÿÿÿÿ8ñ˜Àóˆ/
+]
+java:S18545";Remove this useless assignment to local variable "userTwo".(®®”«üÿÿÿÿ8ô¢šå‘/
+f
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Õ¥;
+m
+java:S1192h"KDefine a constant instead of duplicating this literal "Distanciel" 5 times.(şÉ¹àıÿÿÿÿ8¾šÅôˆ/
+N
+java:S14815",Remove this unused "userTwo" local variable.(®®”«üÿÿÿÿ8ô¢šå‘/
