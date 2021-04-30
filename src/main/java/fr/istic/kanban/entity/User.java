@@ -42,7 +42,7 @@ public class User  implements Serializable  {
 		super();
 		this.email = email;
 		this.name = name;
-		this.password = password;
+		this.password = BCrypt.hashpw(password, BCrypt.gensalt());;
 	}
 
 	public User() { 
@@ -81,7 +81,7 @@ public class User  implements Serializable  {
 	}
 
 	public void setPassword(String password) {
-		this.password =  BCrypt.hashpw(password, BCrypt.gensalt());;
+		this.password =  BCrypt.hashpw(password, BCrypt.gensalt());
 	}
 	
 }
