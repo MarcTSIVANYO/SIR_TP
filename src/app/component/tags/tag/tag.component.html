@@ -1,0 +1,75 @@
+<div class="col-md-10">
+  <button  data-toggle="modal" data-target="#myModal" (click)="openModal(addTagModal)" class="btn btn-primary">Ajout un tag</button>
+</div>
+<hr/>
+<div *ngIf="message" class="alert alert-primary" role="alert">
+  {{ message }}
+</div>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>{{title}}</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let tag of tags; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTag(tag, i)"
+      >
+        {{ tag.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentTag">
+      <h4>Détail Tag</h4>
+      <div>
+        <label><strong>Id: </strong></label> {{ currentTag.id }}
+      </div>
+      <div>
+        <label><strong>Titre: </strong></label>
+        {{ currentTag.name }}
+      </div>
+      <button type="button" class="btn btn-warning btn-sm px-3 position" (click)="updateTag()">
+        <i class="fa fa-pencil"></i>
+      </button>
+
+      <button type="button" class="btn btn-danger btn-sm px-3 position" (click)="deleteTag()">
+        <i class="fa fa-close"></i>
+      </button>
+
+    </div>
+
+    <div *ngIf="!currentTag">
+      <br />
+      <p>Cliquez sur un élement pour voir les détails...</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Formulaire pour ajouter un kanban -->
+<ng-template #addTagModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="editPosteModalLabel">Créer un tag</h5>
+    <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup] ="addTagForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Titre :</label>
+        <input class="form-control" id="name" formControlName="name" placeholder="Titre" />
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn bg-secondary text-white" (click)="modal.dismiss()">Annuler</button>
+        <button type="submit" class="btn bg-primary text-white"
+                [disabled]="addTagForm.invalid">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+</ng-template>

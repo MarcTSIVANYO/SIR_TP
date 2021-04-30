@@ -1,6 +1,6 @@
 import {User} from './user.model';
 import {Section} from './section.model';
-import { Tag } from './tag.model';
+import { Tag } from './tag';
 
 export interface Fiche {
   id: number;
