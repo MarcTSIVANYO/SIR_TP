@@ -1,23 +1,98 @@
-<h1>{{title}}</h1>
-
-<div class="bg-light p-5 rounded">
-  <table class="table align-middle">
-    <thead>
-      <th *ngFor = "let column of headers">
-        {{column}}
-      </th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.password}}</td>
-        <td>
-          <button type="button" class="btn btn-danger btn-sm px-3" (click)="deleteUser(user)">
-            <i class="fas fa-times"></i>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="col-md-10">
+  <!--<app-add-user></app-add-user>-->
+  <button  data-toggle="modal" data-target="#myModal" (click)="openModal(addUserModal)" class="btn btn-primary">Enregistrer</button>
 </div>
+<hr/>
+<div *ngIf="message" class="alert alert-primary" role="alert">
+  {{ message }}
+</div>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>{{title}}</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let user of users; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveUser(user, i)"
+      >
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentUser">
+      <h4>Détail Utilisateur</h4>
+      <div>
+        <label><strong>Nom:</strong></label> {{ currentUser.name }}
+      </div>
+      <div>
+        <label><strong>Email:</strong></label>
+        {{ currentUser.email }}
+      </div>
+      <button type="button" class="btn btn-warning btn-sm px-3 position" (click)="updateUser()">
+        <i class="fa fa-pencil"></i>
+      </button>
+
+      <button type="button" class="btn btn-danger btn-sm px-3 position" (click)="deleteUser()">
+        <i class="fa fa-close"></i>
+      </button>
+
+    </div>
+
+    <div *ngIf="!currentUser">
+      <br />
+      <p>Cliquez sur un élement pour voir les détails...</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Formulaire pour ajouter un kanban -->
+<ng-template #addUserModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="editPosteModalLabel">Créer un utlisateur</h5>
+    <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup] ="addUserForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nom et Prénoms :</label>
+        <input class="form-control" id="name" formControlName="name" placeholder="Votre nom  et prénoms" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input type="text" class="form-control" id="email"  formControlName="email" placeholder="Votre email"  />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe : </label>
+        <div class="input-group">
+          <input id="password" class="form-control" formControlName="password" [type]="fieldTextType ? 'text' : 'password'"
+                 placeholder="Entrer votre mot de passe" />
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <i class="fa"
+                 [ngClass]="{
+                'fa-eye-slash': !fieldTextType,
+                'fa-eye': fieldTextType
+              }"  (click)="toggleFieldTextType()"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn bg-secondary text-white" (click)="modal.dismiss()">Annuler</button>
+        <button type="submit" class="btn bg-secondary text-white"
+                [disabled]="addUserForm.invalid">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+</ng-template>

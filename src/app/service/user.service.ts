@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from '../model/user.model';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
+import { User } from '../model/user';
+import {Kanban} from '../model/kanban.model';
 
 
 const baseURL = 'api/users';
@@ -10,23 +11,48 @@ const baseURL = 'api/users';
   })
 export class UserService {
 
+  submitted = false;
+  users: User[] = [];
+  usersSubject = new Subject<User[]>();
 
-  constructor(private httpClient: HttpClient) { }
-
+  emitUsers(): void{
+    this.usersSubject.next(this.users.slice());
+  }
+  constructor(private httpClient: HttpClient) {
+  }
   signIn(user: User): any {
     //A Coder
   }
 
-  getUsers():Observable<User>{
-    return this.httpClient.get<User>(baseURL);
+  reloadSubmitData( value:boolean){
+    this.submitted=value;
+  }
+
+
+  getSumitted():boolean {
+    return this.submitted;
+  }
+
+  getUsers(): void{
+     this.httpClient.get<User[]>(baseURL).subscribe(
+      (reponse: User[]) => {
+        this.users = reponse;
+        this.emitUsers();
+     }
+    );
   }
 
   read(id:number): Observable<User> {
     return this.httpClient.get<User>(`${baseURL}/${id}`);
     }
 
-    create(user:User): Observable<any> {
-    return this.httpClient.post(baseURL, user);
+    create(user: User): void {
+     this.httpClient.post(baseURL, user).subscribe(
+       (reponse: User) => {
+         this.users.push(reponse);
+         this.emitUsers();
+       }
+     );
     }
     update(id:number, user:User): Observable<any> {
     return this.httpClient.put(`${baseURL}/${id}`, user);

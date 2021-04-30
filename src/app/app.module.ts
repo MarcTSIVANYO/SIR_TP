@@ -21,7 +21,11 @@ import {FicheService} from './service/fiche.service';
 import {UserService} from './service/user.service';
 import {KanbanShareInfos} from './service/kanban-share-infos';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ConfirmationDialogComponent} from './layout/layout/confirmation-dialog/confirmation-dialog.component';
+import {AddUserComponent} from './component/users/add-user/add-user.component';
+import {ConfirmationDialogService} from './service/confirmation-dialog.service';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,10 @@ import {ReactiveFormsModule} from '@angular/forms';
     ListUserComponent,
     SectionComponent,
     KanbanbordComponent,
-    HomeComponent
+    HomeComponent,
+    ConfirmationDialogComponent,
+    AddUserComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     HttpClientModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     KanbanService,
@@ -50,8 +58,10 @@ import {ReactiveFormsModule} from '@angular/forms';
     SectionService,
     TagService,
     UserService,
-    KanbanShareInfos
+    KanbanShareInfos,
+    ConfirmationDialogService
   ],
+  entryComponents: [ ConfirmationDialogComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
