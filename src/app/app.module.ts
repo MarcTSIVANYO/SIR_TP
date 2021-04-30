@@ -26,6 +26,7 @@ import {ConfirmationDialogComponent} from './layout/layout/confirmation-dialog/c
 import {AddUserComponent} from './component/users/add-user/add-user.component';
 import {ConfirmationDialogService} from './service/confirmation-dialog.service';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
+import { TagComponent } from './component/tags/tag/tag.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
     HomeComponent,
     ConfirmationDialogComponent,
     AddUserComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TagComponent
   ],
   imports: [
     BrowserModule,

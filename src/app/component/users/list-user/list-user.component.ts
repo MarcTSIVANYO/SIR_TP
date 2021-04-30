@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConfirmationDialogService } from 'src/app/service/confirmation-dialog.service';
 import { UserService } from 'src/app/service/user.service';
 import {User} from '../../../model/user';
-import {Kanban} from '../../../model/kanban.model';
 import {Subscription} from 'rxjs';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
@@ -15,7 +14,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class ListUserComponent implements OnInit {
 
-  title:String='Liste des utilisateurs'
+  title:String='Liste des tags'
   headers=['Nom', 'Email', 'Actions']
   users: User[] = [];
   userSubscription: Subscription;
@@ -64,7 +63,7 @@ export class ListUserComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.message = 'Utilisateur modifé avec succès!';
+          this.message = 'Tag modifé avec succès!';
         },
         error => {
           console.log(error);
@@ -72,7 +71,7 @@ export class ListUserComponent implements OnInit {
   }
 
   deleteUser(): void {
-    this.confirmationDialogService.confirm('Confirmation', 'Voulez-vous vraiment supprimer cet utilisateur?')
+    this.confirmationDialogService.confirm('Confirmation', 'Voulez-vous vraiment supprimer cet tag?')
     .then((confirmed) =>  {
       if(confirmed){
       this.userService.delete(this.currentUser.email)
@@ -80,7 +79,7 @@ export class ListUserComponent implements OnInit {
         response => {
           console.log(response);
           this.reloadData();
-          this.message = 'Utilisateur supprimé avec succès!';
+          this.message = 'Tag supprimé avec succès!';
           this.currentUser = null;
          // this.router.navigate(['/users']);
         },
@@ -88,7 +87,7 @@ export class ListUserComponent implements OnInit {
           console.log(error);
         });
     }
-  }).catch(() => console.log("L'utilisateur a fermé la boîte de dialogue (par exemple, en utilisant ESC, en cliquant sur l'icône en forme de croix ou en cliquant en dehors de la boîte de dialogue)"));
+  }).catch(() => console.log("L'tag a fermé la boîte de dialogue (par exemple, en utilisant ESC, en cliquant sur l'icône en forme de croix ou en cliquant en dehors de la boîte de dialogue)"));
   }
 
   toggleFieldTextType(): void {
@@ -122,15 +121,6 @@ export class ListUserComponent implements OnInit {
       };
 
       this.userService.create(data);
-     /* this.userService.reloadSubmitData(true);
-      this.router.navigate(['../users']);
-      this.emptyFilds();
-      this.submitted = true;
-      this.requiered = false;
-    } else {
-      this.requiered = true;
-    }
-    this.userService.getUsers();*/
   }
 
 }
