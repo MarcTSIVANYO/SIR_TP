@@ -52,8 +52,10 @@ export class FicheComponent implements OnInit {
     this.fiche.url = this.editFicheForm.value.url;
     this.fiche.dateButoire = new Date();
     this.fiche.note = this.editFicheForm.value.note;
+    this.fiche.owner = new User(1, 'scr.master@gmail.com', '', '');
+    this.fiche.tags = [];
 
-    this.ficheService.createFiche(this.fiche);
+    this.ficheService.updateFiche(this.fiche, this.fiche.id);
     this.sectionService.getAll();
   }
 }
