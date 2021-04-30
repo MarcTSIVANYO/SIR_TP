@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.maggin{ 
+  margin: 15px;
+}
+.maggin-bottomTwo{ 
+  margin: 5px;
+}
+.maggin-bottom{ 
+  margin-bottom: 50px;
+}

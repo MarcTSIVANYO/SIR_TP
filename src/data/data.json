@@ -1,0 +1,12 @@
+{
+    "HeaderGroup": {
+        "title": "Ressource Pokémon",
+        "detail": "Liste des catégories de pokémons"
+
+    }, 
+    "HeaderDetail": {
+        "title": "Détail des pokémons",
+        "detail": "Liste des détails des catégories de pokémons"
+
+    }
+}
