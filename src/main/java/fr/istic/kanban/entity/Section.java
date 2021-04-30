@@ -52,7 +52,7 @@ public class Section implements Serializable {
 		this.position = position;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL)
 	public Kanban getKanban() {
 		return kanban;
 	}

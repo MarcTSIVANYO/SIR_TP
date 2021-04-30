@@ -5,16 +5,17 @@ import java.util.List;
 
 import javax.ws.rs.NotFoundException; 
 import fr.istic.kanban.dao.KanbanDao;
+import fr.istic.kanban.dao.SectionDao;
 import fr.istic.kanban.dto.KanbanDto;
 import fr.istic.kanban.dto.SectionDto;
-import fr.istic.kanban.entity.Kanban;
-import fr.istic.kanban.entity.Section;
+import fr.istic.kanban.entity.*;
 import fr.istic.kanban.exceptions.CustomException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class KanbanService {
 	private final KanbanDao kanbanDao = new KanbanDao();
+	private final SectionDao sectionDao = new SectionDao();
 	private static Logger LOGGER = LoggerFactory.getLogger(FicheService.class);
 	
 	/*
@@ -31,7 +32,35 @@ public class KanbanService {
 			kanban.setNom(kanbanDto.getNom());
 			kanban.setAdmin(kanbanDto.getAdmin().convertToEntity());
 		}
+		// on creer automatiquement les 3 sections pour le nouveau tableau kanban
+		EnAttente sectionEnAttente = new EnAttente();
+		sectionEnAttente.setLibelle("En attente");
+		sectionEnAttente.setPosition(1);
+
+		Execute sectionExecute = new Execute();
+		sectionExecute.setLibelle("Execute");
+		sectionExecute.setPosition(3);
+
+		EnCours sectionEnCours = new EnCours();
+		sectionEnCours.setLibelle("En cours");
+		sectionEnCours.setPosition(2);
+
+		List<Section> sections = new ArrayList<>();
+		sections.add(sectionEnAttente);
+		sections.add(sectionEnCours);
+		sections.add(sectionExecute);
+
+		sectionEnAttente.setKanban(kanban);
+		sectionEnCours.setKanban(kanban);
+		sectionExecute.setKanban(kanban);
+
+		sectionDao.save(sectionEnAttente);
+		sectionDao.save(sectionEnCours);
+		sectionDao.save(sectionExecute);
+
+		kanban.setSections(sections);
 		kanbanDao.save(kanban);
+
 
     }	
 	

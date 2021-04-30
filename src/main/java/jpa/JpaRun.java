@@ -172,12 +172,12 @@ public class JpaRun {
 
 		//Ajout des fiches au differentes Sections
 		sectionEnAttente.addFiche(fiche10);
-		sectionEnCours.addFiche(fiche9);
-		sectionEnCours.addFiche(fiche8);
-		sectionEnCours.addFiche(fiche7);
+		sectionEnAttente.addFiche(fiche9);
+		sectionEnAttente.addFiche(fiche8);
+		sectionEnAttente.addFiche(fiche7);
 		sectionEnCours.addFiche(fiche6);
-		sectionExecute.addFiche(fiche5);
-		sectionExecute.addFiche(fiche4);
+		sectionEnCours.addFiche(fiche5);
+		sectionEnCours.addFiche(fiche4);
 		sectionExecute.addFiche(fiche3);
 		sectionExecute.addFiche(fiche2);
 		sectionExecute.addFiche(fiche1);

@@ -125,7 +125,7 @@ public class FicheService {
 	}
 
 	/*
-	 * Récupérer la liste des tags à partir d'un id de fiche
+	 * Rï¿½cupï¿½rer la liste des tags ï¿½ partir d'un id de fiche
 	 */
 	public List<TagDto> getTagsByFicheId(Long id){
 		CustomException.isValid(id);  

@@ -29,6 +29,16 @@ public class FicheDto {
 		this.owner = owner; 
 		this.sectionId=sectionId;
 	}
+
+	public FicheDto(Long id, String libelle, String lieu, String url, String note, Long sectionId){
+		super();
+		this.id=id;
+		this.libelle = libelle;
+		this.lieu = lieu;
+		this.url = url;
+		this.note = note;
+		this.sectionId=sectionId;
+	}
  
 	
 	public Long getId() {

@@ -38,6 +38,16 @@ public class Fiche  implements Serializable  {
 		this.tags = tags;
 	}
 
+	public Fiche(String libelle, String lieu, String url, String note, Section section){
+		super();
+		this.id=id;
+		this.libelle = libelle;
+		this.lieu = lieu;
+		this.url = url;
+		this.note = note;
+		this.section=section;
+	}
+
 	public Fiche(String libelle){
 		this.libelle = libelle;
 	}

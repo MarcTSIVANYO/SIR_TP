@@ -58,7 +58,7 @@ public class Kanban implements Serializable {
 		this.admin = admin;
 	}
 
-	@OneToMany(mappedBy = "kanban", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "kanban", cascade = CascadeType.ALL)
 	public List<Section> getSections() {
 		return sections;
 	}
