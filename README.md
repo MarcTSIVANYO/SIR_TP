@@ -6,9 +6,9 @@
 
 ## Guides
 
--Installer les modules : npm install
+- Installer les modules : npm install
 
--Installer boostrap  : npm install react-bootstrap bootstrap
+- Installer boostrap  : npm install react-bootstrap bootstrap
 
 - React router : npm i @types/react-router-dom
 
