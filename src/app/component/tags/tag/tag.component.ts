@@ -16,7 +16,7 @@ export class TagComponent implements OnInit {
   title:String='Liste des tags'
   headers=['Id', 'Titre', 'Actions']
   tags: Tag[] = [];
-  userSubscription: Subscription;
+  tagSubscription: Subscription;
   addTagForm: FormGroup;
   currentTag :any= null;
   currentIndex = -1;
@@ -24,13 +24,13 @@ export class TagComponent implements OnInit {
   fieldTextType = false;
   constructor(private tagService: TagService, private route: ActivatedRoute, private confirmationDialogService: ConfirmationDialogService,
               private formBuilder: FormBuilder, private modalService: NgbModal) {
-    this.userSubscription = new Subscription();
+    this.tagSubscription = new Subscription();
   }
   ngOnInit(): void {
     this.message = '';
     this.initFomulaire();
 
-    this.userSubscription = this.tagService.tagsSubject.subscribe(
+    this.tagSubscription = this.tagService.tagsSubject.subscribe(
       (response: Tag[]) => {
         this.tags = response;
       }
@@ -61,7 +61,7 @@ export class TagComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.message = 'Utilisateur modifé avec succès!';
+          this.message = 'Tag modifé avec succès!';
         },
         error => {
           console.log(error);
@@ -69,7 +69,7 @@ export class TagComponent implements OnInit {
   }
 
   deleteTag(): void {
-    this.confirmationDialogService.confirm('Confirmation', 'Voulez-vous vraiment supprimer cet utilisateur?')
+    this.confirmationDialogService.confirm('Confirmation', 'Voulez-vous vraiment supprimer cet tag?')
     .then((confirmed) =>  {
       if(confirmed){
       this.tagService.delete(this.currentTag.id)
@@ -77,7 +77,7 @@ export class TagComponent implements OnInit {
         response => {
           console.log(response);
           this.reloadData();
-          this.message = 'Utilisateur supprimé avec succès!';
+          this.message = 'Tag supprimé avec succès!';
           this.currentTag = null;
          // this.router.navigate(['/tags']);
         },
@@ -85,7 +85,7 @@ export class TagComponent implements OnInit {
           console.log(error);
         });
     }
-  }).catch(() => console.log("L'utilisateur a fermé la boîte de dialogue (par exemple, en utilisant ESC, en cliquant sur l'icône en forme de croix ou en cliquant en dehors de la boîte de dialogue)"));
+  }).catch(() => console.log("L'tag a fermé la boîte de dialogue (par exemple, en utilisant ESC, en cliquant sur l'icône en forme de croix ou en cliquant en dehors de la boîte de dialogue)"));
   }
 
   toggleFieldTextType(): void {
